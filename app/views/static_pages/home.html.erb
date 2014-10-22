@@ -1,5 +1,10 @@
-<nav class="navbar navbar-inverse"> <!--This is the navigation bar we should modify it later on
-to make it more dynamic-->
+<!-- <% if signed_in? %> -->
+<!-- links for signed-in user = profile page -->
+
+<!-- <% else %> -->
+<!-- links for non-signed-in-users -->
+
+<nav class="navbar navbar-inverse"> <!--This is the navigation bar we should modify it later on to make it more dynamic-->
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -31,10 +36,12 @@ to make it more dynamic-->
   <center><h1>Welcome to Build a Comp</h1></center>
 
 
-<center> <%= link_to '#', class: "btn btn-lg btn-primary" do %>
+  <center> <%= link_to '#', class: "btn btn-lg btn-primary" do %>
     <span class="glyphicon glyphicon-user"></span> Sign up now!<!--this will be modified to point to the
-      new user once Tyler makes the db-->
-<% end %>
-</center>
+    new user once Tyler makes the db-->
+    <% end %>
+  </center>
 
 </div>
+
+<!-- <% end %>
