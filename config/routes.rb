@@ -1,4 +1,7 @@
 CompApp::Application.routes.draw do
+  get "component_pages/motherboard"
+  get "static_pages/home"
+  get "static_pages/help"
   root "static_pages#home" #added this route to set the new home to static_pages#home
 
   # The priority is based upon order of creation: first created -> highest priority.
