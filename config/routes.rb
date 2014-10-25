@@ -1,4 +1,7 @@
 CompApp::Application.routes.draw do
+  get "component_pages/cpu"
+  get "component_pages/rvm"
+  get "component_pages/hardware"
   get "component_pages/motherboard"
   get "static_pages/home"
   get "static_pages/help"
