@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token #Used for remembering sessions
+	  validates :password, :confirmation => true
+		validates :password_confirmation, :presence => true
 
 
 

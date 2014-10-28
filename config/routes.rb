@@ -1,9 +1,13 @@
 CompApp::Application.routes.draw do
+resources :users
+
   get "component_pages/cpu"
   get "component_pages/rvm"
   get "component_pages/hardware"
   get "component_pages/motherboard"
   get "users/edit"
+  get "users/new"
+
   get "static_pages/home"
   get "static_pages/help"
   root "static_pages#home" #added this route to set the new home to static_pages#home
