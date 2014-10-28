@@ -1,11 +1,18 @@
+<% if logged_in? %>
+	<center><h1>Your are logged in!</h1></center>
+		
+<% else %>
+	<div class="center jumbotron">
+		<center><h1>Welcome to Build a Comp</h1></center>
 
-<div class="center jumbotron">
-  <center><h1>Welcome to Build a Comp</h1></center>
-
-
-  <center> <%= link_to users_new_path, class: "btn btn-lg btn-primary" do %>
-    <span class="glyphicon glyphicon-user"></span> Sign up now!
-    <% end %>
-  </center>
-
-</div>
+		<center> 
+			<%= link_to users_new_path, class: "btn btn-lg btn-primary" do %>
+				<span class="glyphicon glyphicon-user"></span> Sign Up
+			<% end %> 
+			<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+			<%= link_to login_path, class: "btn btn-lg btn-primary" do %>
+				<span class="glyphicon glyphicon-user"></span> Log In
+			<% end %>
+		</center>
+	</div>
+<% end %>
