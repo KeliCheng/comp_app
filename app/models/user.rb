@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
 	attr_accessor :remember_token #Used for remembering sessions
 	  validates :password, :confirmation => true
 		validates :password_confirmation, :presence => true
-
-
+		validates :name, presence: true, uniqueness: true
+		validates :email, presence: true, uniqueness: true
 
 	# Returns a random token.
   def User.new_token
