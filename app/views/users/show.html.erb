@@ -4,18 +4,18 @@
 		<section>
 			<h1>
 				<center>Name: <%= @user.name %><br/>
-				Email: <%= @user.email %><br/>
-				Account Created on: <%= @user.created_at %><br/>
-			</h1>
-		</section>
-	</aside>
+					Email: <%= @user.email %><br/>
+					Account Created on: <%= @user.created_at %><br/>
+				</h1>
+			</section>
+		</aside>
+
 
 	<div class="center jumbotron">
 		<center> 
 			<%= link_to login_path, class: "btn btn-lg btn-primary" do %>
-				<span class="glyphicon glyphicon-user"></span> Log In
+			<span class="glyphicon glyphicon-user"></span> Log In
 			<% end %>
 		</center>
 	</div>
-
 </div>

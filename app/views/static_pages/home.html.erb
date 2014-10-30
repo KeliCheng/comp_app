@@ -1,6 +1,12 @@
 <% if logged_in? %>
 	<center><h1>Your are logged in!</h1></center>
-		
+		<div class="center jumbotron">
+			<center> 
+				<%= link_to edit_user_path, class: "btn btn-lg btn-primary" do %>
+					<span class="glyphicon glyphicon-user"></span> Edit User Info
+				<% end %>
+			</center>
+		</div>
 <% else %>
 	<div class="center jumbotron">
 		<center><h1>Welcome to Build a Comp</h1></center>
