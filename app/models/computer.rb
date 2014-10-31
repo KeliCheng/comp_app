@@ -11,7 +11,8 @@
 #
 
 class Computer < ActiveRecord::Base
-	#has_many :components
+	belongs_to :user
+	has_many :components
 	#attr_accessible :name, :status, :price 
 	validates :name, presence: true, length: { maximum: 59 }, uniqueness: { case_sensitive: false }
 	#validates :status, presence: true
