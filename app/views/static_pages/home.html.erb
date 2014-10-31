@@ -2,7 +2,9 @@
 	<center><h1>Your are logged in!</h1></center>
 		<div class="center jumbotron">
 			<center> 
-				 
+				 <%= link_to users_edit_path, class: "btn btn-lg btn-primary" do %>
+					<span class="glyphicon glyphicon-user"></span> Edit User Info
+				<% end %>
 			</center>
 		</div>
 <% else %>
