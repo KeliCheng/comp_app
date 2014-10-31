@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022151246) do
+ActiveRecord::Schema.define(version: 20141031214719) do
+
+  create_table "computers", force: true do |t|
+    t.string   "name"
+    t.boolean  "status"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "computers", ["name"], name: "index_computers_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "name"
