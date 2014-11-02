@@ -6,6 +6,9 @@
 				 <%= link_to edit_user_path(current_user), class: "btn btn-lg btn-primary" do %>
 					<span class="glyphicon glyphicon-wrench"></span> Edit User Info
 				<% end %>
+				<%= link_to logout_path, method: "delete", class: "btn btn-lg btn-primary" do %>
+					<span class="glyphicon glyphicon-remove"></span> Log out
+				<% end %>
 			</center>
 		</div>
 <% else %>
