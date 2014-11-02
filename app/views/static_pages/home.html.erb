@@ -1,9 +1,10 @@
 <% if logged_in? %>
-	<center><h1>Your are logged in!</h1></center>
+	<center><h1>User: <%= current_user.name %> </h1></center>
+	<center><h2>Email: <%= current_user.email %></h2><center>
 		<div class="center jumbotron">
 			<center> 
 				 <%= link_to edit_user_path(current_user), class: "btn btn-lg btn-primary" do %>
-					<span class="glyphicon glyphicon-user"></span> Edit User Info
+					<span class="glyphicon glyphicon-wrench"></span> Edit User Info
 				<% end %>
 			</center>
 		</div>
@@ -13,7 +14,7 @@
 
 		<center> 
 			<%= link_to users_new_path, class: "btn btn-lg btn-primary" do %>
-				<span class="glyphicon glyphicon-user"></span> Sign Up
+				<span class="glyphicon glyphicon-plus"></span> Sign Up
 			<% end %> 
 			<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 			<%= link_to login_path, class: "btn btn-lg btn-primary" do %>
