@@ -1,22 +1,29 @@
 <% provide(:title, 'Motherboard') %>
 <!DOCTYPE html>
 <html>
-  <head>
-     <title>Computer | <%= yield(:title) %></title>
-  </head>
+<head>
+ <title>Computer | <%= yield(:title) %></title>
+</head>
+<center><h1>Motherboard</h1></center>
+
+<center>
   <body>
-    <h1>Comp App</h1>
-    <p>
-      <strong> Type: </strong>
-      
-    </p>
-    <p>
-      <strong> Description: </strong>
-     
-    </p>
-    <p>
-      <strong> Price: </strong>
-      
-    </p>
-  </body>
-</html>
+    <table style="width:100%">
+      <tr>
+        <th></th>
+        <th><center>ID</center></th>
+        <th><center>Price</center></th>
+      </tr>
+      <tr>
+        <td><input type="radio" name="MB" value="1" /></td>
+        <td>(ID #) 1</td>
+        <td>(Price) $20.00</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="MB" value="2" /></td>
+        <td>(ID #) 2</td>
+        <td>(Price)$40.00</td>
+      </tr>
+    </table>
+  </center>
+  </html>
