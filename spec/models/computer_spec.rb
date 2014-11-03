@@ -14,6 +14,10 @@
 require 'spec_helper'
 
 describe Computer do
+  let(:computer) { FactoryGirl.create(:computer) }
+  #before do
+  #  @computer = Computer.new(name: "Example Comp", status: false, price: 2)
+ # end
   before { @computer = Computer.new(name: "Example Comp", status: false, price: 0) }
 
   subject { @computer }
@@ -21,8 +25,25 @@ describe Computer do
   it { should respond_to(:name) } #test for existence of following attr. 
   it { should respond_to(:status) }
   it { should respond_to(:price) }
+  it { should respond_to(:user_id) }
+  it { should respond_to(:user) }
+  #its(:user) { should == user }
 
   it { should be_valid }
+  
+   describe "when user_id is not present" do
+   # before { @computer.user_id = nil }
+   # it { should_not be_valid }
+  end
+
+   describe "accessible attributes" do
+    it "should not allow access to user_id" do
+      expect do
+        Computer.new(user_id: user.id)
+      end
+      #.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+    end
+  end
 
   describe "when name is not present" do
     before { @computer.name = " " }

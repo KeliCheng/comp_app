@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 		validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     has_secure_password
     before_save {|user| user.email.downcase!}
+    has_many :computers
 	# Returns a random token.
 
   # Returns the hash digest of the given string.
