@@ -12,7 +12,11 @@
 #
 
 class Computer < ActiveRecord::Base
+<<<<<<< HEAD
 	belongs_to :user 
+=======
+	belongs_to :user
+>>>>>>> 332f02dce5eea5c27e27515bf0de0e9744734cb2
 	validates :name, presence: true, length: { maximum: 59 }, uniqueness: { case_sensitive: false }
 	validates :status, presence: true
 	validates :price, presence: true, :numericality => { :greater_than_or_equal_to => 0 }
