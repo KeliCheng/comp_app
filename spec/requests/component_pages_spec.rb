@@ -42,16 +42,42 @@ describe "Component pages" do
     end
   end
 
-   describe "hardware page" do
+  describe "gpu page" do
      it "should have the h1 'Comp App'" do
-      visit '/component_pages/hardware'
+      visit '/component_pages/gpu'
       page.should have_selector('h1', :text => 'Comp App')
     end
 
-    it "should have the title 'Hardware'" do
-      visit '/component_pages/hardware'
+    it "should have the title 'GPU'" do
+      visit '/component_pages/gpu'
       page.should have_selector('title',
-                        :text => "Computer | Hardware")
+                        :text => "Computer | GPU")
+    end
+  end
+
+  describe "powerSupply page" do
+     it "should have the h1 'Comp App'" do
+      visit '/component_pages/power'
+      page.should have_selector('h1', :text => 'Comp App')
+    end
+
+    it "should have the title 'PowerSupply'" do
+      visit '/component_pages/power'
+      page.should have_selector('title',
+                        :text => "Computer | PowerSupply")
+    end
+  end
+
+   describe "hd page" do
+     it "should have the h1 'Comp App'" do
+      visit '/component_pages/hd'
+      page.should have_selector('h1', :text => 'Comp App')
+    end
+
+    it "should have the title 'HD'" do
+      visit '/component_pages/hd'
+      page.should have_selector('title',
+                        :text => "Computer | HD")
     end
   end
 

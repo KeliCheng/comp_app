@@ -8,7 +8,15 @@ class ComponentPagesController < ApplicationController
   def rvm 
   end 
 
-  def hardware
+  def hd
   end 
+
+  def powerS
+  end 
+
+  def gpu
+  end 
+
+
   
 end
