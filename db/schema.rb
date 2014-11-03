@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103014328) do
+ActiveRecord::Schema.define(version: 20141103210306) do
 
   create_table "computers", force: true do |t|
     t.string   "name"
@@ -23,6 +23,47 @@ ActiveRecord::Schema.define(version: 20141103014328) do
   end
 
   add_index "computers", ["name"], name: "index_computers_on_name", unique: true
+
+  create_table "cpus", force: true do |t|
+    t.decimal  "price"
+    t.string   "speed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gpus", force: true do |t|
+    t.decimal  "price"
+    t.string   "vram"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hds", force: true do |t|
+    t.decimal  "price"
+    t.string   "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "motherboards", force: true do |t|
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "powers", force: true do |t|
+    t.decimal  "price"
+    t.string   "voltage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rams", force: true do |t|
+    t.decimal  "price"
+    t.string   "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
