@@ -1,0 +1,35 @@
+<% provide(:title, 'HD') %>
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Computer | <%= yield(:title) %></title>
+     <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Comp App</h1>
+    <p>
+      <strong> Type: </strong>
+
+      <strong> Size: </strong>
+
+      <strong> read speed: </strong>
+
+      <strong> write speed: </strong>
+      
+    </p>
+    <p>
+      <strong> Description: </strong>
+     
+    </p>
+    <p>
+      <strong> Price: </strong>
+      
+    </p>
+    
+  </body>
+</html>
