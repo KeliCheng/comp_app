@@ -10,12 +10,25 @@
 			</section>
 		</aside>
 
+	<% if logged_in? %>
 
-	<div class="center jumbotron">
-		<center> 
-			<%= link_to login_path, class: "btn btn-lg btn-primary" do %>
-			<span class="glyphicon glyphicon-user"></span> Log In
-			<% end %>
-		</center>
-	</div>
+		<div class="center jumbotron">
+			<center> 
+				<%= link_to static_pages_home_path, class: "btn btn-lg btn-primary" do %>
+				<span class="glyphicon glyphicon-home"></span> Home
+				<% end %>
+			</center>
+		</div>
+
+	<% else %>
+
+		<div class="center jumbotron">
+			<center> 
+				<%= link_to login_path, class: "btn btn-lg btn-primary" do %>
+				<span class="glyphicon glyphicon-user"></span> Log In
+				<% end %>
+			</center>
+		</div>
+
+	<% end %>
 </div>
