@@ -2,23 +2,29 @@
 	<center><h1>User: <%= current_user.name %> </h1></center>
 	<center><h2>Email: <%= current_user.email %></h2><center>
 		<div class="center jumbotron">
-			<center> 
+			<center>
 				 <%= link_to edit_user_path(current_user), class: "btn btn-lg btn-primary" do %>
 					<span class="glyphicon glyphicon-wrench"></span> Edit User Info
 				<% end %>
 				<%= link_to logout_path, method: "delete", class: "btn btn-lg btn-primary" do %>
 					<span class="glyphicon glyphicon-remove"></span> Log out
 				<% end %>
+				<br>
+				<br>
+<div>
+				<%= link_to "Start", component_pages_motherboard_path,
+																			class: "btn btn-large btn-success" %>
+</div>
 			</center>
 		</div>
 <% else %>
 	<div class="center jumbotron">
 		<center><h1>Welcome to Build a Comp</h1></center>
 
-		<center> 
+		<center>
 			<%= link_to users_new_path, class: "btn btn-lg btn-primary" do %>
 				<span class="glyphicon glyphicon-plus"></span> Sign Up
-			<% end %> 
+			<% end %>
 			<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 			<%= link_to login_path, class: "btn btn-lg btn-primary" do %>
 				<span class="glyphicon glyphicon-user"></span> Log In
