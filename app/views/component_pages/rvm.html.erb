@@ -5,6 +5,16 @@
      <title>Computer | <%= yield(:title) %></title>
   </head>
   <body>
+    <ul >
+    <% @rvm.each do |rv| %>
+    <li>
+
+    <%= rv.id %>
+    <%= rv.price %>
+    </li>
+    <% end %>
+    </ul>
+
     <h1>Comp App</h1>
     <p>
       <strong> Type: </strong>

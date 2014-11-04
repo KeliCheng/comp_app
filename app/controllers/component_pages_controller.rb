@@ -1,22 +1,30 @@
 class ComponentPagesController < ApplicationController
-  def motherboard
+
+
+def motherboard
+  @mother = Motherboard.all
+end
+
+  def cpu
+    @cpu = Cpu.all
   end
 
-  def cpu 
-  end 
-
-  def rvm 
-  end 
+  def rvm
+    @rvm = Ram.all
+  end
 
   def hd
-  end 
+    @hd = Hd.all
+  end
 
-  def powerS
-  end 
+  def power
+    @power = Power.all
+  end
 
   def gpu
-  end 
+    @gpu = Gpu.all
+  end
 
 
-  
+
 end

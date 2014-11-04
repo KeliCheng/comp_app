@@ -5,6 +5,17 @@
      <title>Computer | <%= yield(:title) %></title>
   </head>
   <body>
+
+    <ul >
+    <% @cpu.each do |cp| %>
+    <li>
+
+    <%= cp.id %>
+    <%= cp.price %>
+    </li>
+    <% end %>
+    </ul>
+
     <h1>Comp App</h1>
     <p>
       <strong> Type: </strong>

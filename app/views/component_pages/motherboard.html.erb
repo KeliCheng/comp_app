@@ -8,6 +8,15 @@
 
 <center>
   <body>
+    <ul >
+    <% @mother.each do |board| %>
+    <li>
+
+    <%= board.id %>
+    <%= board.price %>
+    </li>
+    <% end %>
+    </ul>
     <table style="width:100%">
       <tr>
         <th></th>
@@ -26,7 +35,6 @@
       </tr>
     </table>
   </center>
-  </html>
     <p>
       <strong> Type: </strong>
       <strong> Compatability: </strong>
