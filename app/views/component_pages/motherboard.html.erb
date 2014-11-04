@@ -8,6 +8,15 @@
 
 <center>
   <body>
+    <ul >
+    <% @mother.each do |board| %>
+    <li>
+
+    <%= board.id %>
+    <%= board.price %>
+    </li>
+    <% end %>
+    </ul>
     <table style="width:100%">
       <tr>
         <th></th>
@@ -26,19 +35,26 @@
       </tr>
     </table>
   </center>
-  </html>
     <p>
       <strong> Type: </strong>
       <strong> Compatability: </strong>
-      
+
     </p>
     <p>
       <strong> Description: </strong>
-     
+
     </p>
     <p>
       <strong> Price: </strong>
-      
-    </p>
+
+  </p>
+  <div align="right">
+  <%= link_to "Next", component_pages_cpu_path,
+                                class: "btn btn-large btn-primary" %>
+</div>
+
+  </div>
+
   </body>
+
 </html>

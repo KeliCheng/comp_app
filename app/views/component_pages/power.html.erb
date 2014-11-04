@@ -11,20 +11,32 @@
     <![endif]-->
   </head>
   <body>
+    <ul >
+    <% @power.each do |po| %>
+    <li>
+
+    <%= po.id %>
+    <%= po.price %>
+    </li>
+    <% end %>
+    </ul>
     <h1>Comp App</h1>
     <p>
       <strong> Type: </strong>
       <strong> Volts: </strong>
-      
+
     </p>
     <p>
       <strong> Description: </strong>
-     
+
     </p>
     <p>
       <strong> Price: </strong>
-      
+
     </p>
-    
+    <div align="right">
+    <%= link_to "Summary", "#",
+                                  class: "btn btn-large btn-primary" %>
+  </div>
   </body>
 </html>

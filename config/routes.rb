@@ -6,11 +6,11 @@ resources :users
   get "component_pages/motherboard"
   get "users/edit"
   get "users/new"
-
+get "component_pages/index"
   get "component_pages/gpu"
   get "component_pages/hd"
   get "component_pages/power"
-  
+
   get "static_pages/home"
   get "static_pages/help"
   root "static_pages#home" #added this route to set the new home to static_pages#home
