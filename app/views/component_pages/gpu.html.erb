@@ -1,41 +1,34 @@
 <% provide(:title, 'GPU') %>
 <!DOCTYPE html>
 <html>
-  <head>
-     <title>Computer | <%= yield(:title) %></title>
-     <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+<head>
+ <title>Computer | <%= yield(:title) %></title>
+</head>
+<center><h1>GPU</h1></center>
+
+<center>
   <body>
+    
+     <table style="width:100%">
+      <tr>
+        <th></th>
+        <th><center>ID</center></th>
+        <th><center>Price</center></th>
+        <th><center>VRAM</center><th>
+      </tr>
 
-    <ul >
-    <% @gpu.each do |gp| %>
-    <li>
+      <% @gpu.each do |f| %>
+        <tr>
+          <td><input type="radio" name="gpu_choice" value=f.id /></td>
+          <td><%= f.id %></td>
+          <td>$ <%= f.price %></td>
+          <td><%= f.vram %></td>
+        </tr>
+      <% end %>
+    </table>
+  </center>
 
-    <%= gp.id %>
-    <%= gp.price %>
-    </li>
-    <% end %>
-    </ul>
 
-    <h1>Comp App</h1>
-    <p>
-      <strong> Type: </strong>
-      <strong> Speed: </strong>
-      <strong> VRAM: </strong>
-    </p>
-    <p>
-      <strong> Description: </strong>
-
-    </p>
-    <p>
-      <strong> Price: </strong>
-
-    </p>
     <div align="right">
     <%= link_to "Next", component_pages_hd_path,
                                   class: "btn btn-large btn-primary" %>

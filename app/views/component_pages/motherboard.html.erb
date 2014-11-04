@@ -8,46 +8,27 @@
 
 <center>
   <body>
-    <ul >
-    <% @mother.each do |board| %>
-    <li>
-
-    <%= board.id %>
-    <%= board.price %>
-    </li>
-    <% end %>
-    </ul>
-    <table style="width:100%">
+    
+     <table style="width:100%">
       <tr>
         <th></th>
         <th><center>ID</center></th>
         <th><center>Price</center></th>
       </tr>
-      <tr>
-        <td><input type="radio" name="MB" value="1" /></td>
-        <td>(ID #) 1</td>
-        <td>(Price) $20.00</td>
-      </tr>
-      <tr>
-        <td><input type="radio" name="MB" value="2" /></td>
-        <td>(ID #) 2</td>
-        <td>(Price)$40.00</td>
-      </tr>
+
+      <% @mother.each do |f| %>
+        <tr>
+          <td><input type="radio" name="motherboard_choice" value=f.id /></td>
+          <td><%= f.id %></td>
+          <td>$ <%= f.price %></td>
+        </tr>
+      <% end %>
     </table>
   </center>
-    <p>
-      <strong> Type: </strong>
-      <strong> Compatability: </strong>
 
-    </p>
-    <p>
-      <strong> Description: </strong>
 
-    </p>
-    <p>
-      <strong> Price: </strong>
 
-  </p>
+
   <div align="right">
   <%= link_to "Next", component_pages_cpu_path,
                                 class: "btn btn-large btn-primary" %>

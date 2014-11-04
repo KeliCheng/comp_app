@@ -1,42 +1,29 @@
-<% provide(:title, 'PowerSupply') %>
+<% provide(:title, 'Power Supply') %>
 <!DOCTYPE html>
 <html>
-  <head>
-     <title>Computer | <%= yield(:title) %></title>
-     <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+<head>
+ <title>Computer | <%= yield(:title) %></title>
+</head>
+<center><h1>Power Supply</h1></center>
+
+<center>
   <body>
-    <ul >
-    <% @power.each do |po| %>
-    <li>
+    
+     <table style="width:100%">
+      <tr>
+        <th></th>
+        <th><center>ID</center></th>
+        <th><center>Price</center></th>
+        <th><center>Voltage</center></th>
+      </tr>
 
-    <%= po.id %>
-    <%= po.price %>
-    </li>
-    <% end %>
-    </ul>
-    <h1>Comp App</h1>
-    <p>
-      <strong> Type: </strong>
-      <strong> Volts: </strong>
-
-    </p>
-    <p>
-      <strong> Description: </strong>
-
-    </p>
-    <p>
-      <strong> Price: </strong>
-
-    </p>
-    <div align="right">
-    <%= link_to "Summary", "#",
-                                  class: "btn btn-large btn-primary" %>
-  </div>
-  </body>
-</html>
+      <% @power.each do |f| %>
+        <tr>
+          <td><input type="radio" name="powersupply_choice" value=f.id /></td>
+          <td><%= f.id %></td>
+          <td>$ <%= f.price %></td>
+          <td><%= f.voltage %> V</td>
+        </tr>
+      <% end %>
+    </table>
+  </center>

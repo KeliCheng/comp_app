@@ -1,46 +1,36 @@
 <% provide(:title, 'CPU') %>
 <!DOCTYPE html>
 <html>
-  <head>
-     <title>Computer | <%= yield(:title) %></title>
-  </head>
+<head>
+ <title>Computer | <%= yield(:title) %></title>
+</head>
+<center><h1>CPU</h1></center>
+
+<center>
   <body>
+    
+     <table style="width:100%">
+      <tr>
+        <th></th>
+        <th><center>ID</center></th>
+        <th><center>Price</center></th>
+        <th><center>Speed</center></th>
+      </tr>
 
-    <ul >
-    <% @cpu.each do |cp| %>
-    <li>
+      <% @cpu.each do |f| %>
+        <tr>
+          <td><input type="radio" name="cpu_choice" value=f.id /></td>
+          <td><%= f.id %></td>
+          <td>$ <%= f.price %></td>
+          <td><%= f.speed %> GHz</td>
+        </tr>
+      <% end %>
+    </table>
+  </center>
 
-    <%= cp.id %>
-    <%= cp.price %>
-    </li>
-    <% end %>
-    </ul>
-
-    <h1>Comp App</h1>
-    <p>
-      <strong> Type: </strong>
-      <strong> Speed: </strong>
-
-    </p>
-    <p>
-      <strong> Cache: </strong>
-
-    </p>
-    <p>
-      <strong> Quad-Core: </strong>
-
-    </p>
-    <p>
-      <strong> Description: </strong>
-
-    </p>
-    <p>
-      <strong> Price: </strong>
-
-    </p>
-    <div align="right">
-    <%= link_to "Next", component_pages_rvm_path,
-                                  class: "btn btn-large btn-primary" %>
-  </div>
-  </body>
+<div align="right">
+  <%= link_to "Next", component_pages_rvm_path,
+  class: "btn btn-large btn-primary" %>
+</div>
+</body>
 </html>

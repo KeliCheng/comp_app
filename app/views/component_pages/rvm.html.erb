@@ -1,35 +1,34 @@
-<% provide(:title, 'RVM') %>
+<% provide(:title, 'RAM') %>
 <!DOCTYPE html>
 <html>
-  <head>
-     <title>Computer | <%= yield(:title) %></title>
-  </head>
+<head>
+ <title>Computer | <%= yield(:title) %></title>
+</head>
+<center><h1>RAM</h1></center>
+
+<center>
   <body>
-    <ul >
-    <% @rvm.each do |rv| %>
-    <li>
+    
+     <table style="width:100%">
+      <tr>
+        <th></th>
+        <th><center>ID</center></th>
+        <th><center>Price</center></th>
+        <th><center>Size</center></th>
+      </tr>
 
-    <%= rv.id %>
-    <%= rv.price %>
-    </li>
-    <% end %>
-    </ul>
+      <% @rvm.each do |f| %>
+        <tr>
+          <td><input type="radio" name="ram_choice" value=f.id /></td>
+          <td><%= f.id %></td>
+          <td>$ <%= f.price %></td>
+          <td><%= f.size %> GB</td>
+        </tr>
+      <% end %>
+    </table>
+  </center>
 
-    <h1>Comp App</h1>
-    <p>
-      <strong> Type: </strong>
-      <strong> Speed: </strong>
-      <strong> Size: </strong>
 
-    </p>
-    <p>
-      <strong> Description: </strong>
-
-    </p>
-    <p>
-      <strong> Price: </strong>
-
-    </p>
     <div align="right">
     <%= link_to "Next", component_pages_gpu_path,
                                   class: "btn btn-large btn-primary" %>
