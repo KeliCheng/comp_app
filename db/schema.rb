@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103210306) do
+ActiveRecord::Schema.define(version: 20141104212848) do
 
   create_table "computers", force: true do |t|
     t.string   "name"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20141103210306) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "hd_id"
+    t.integer  "motherboard_id"
+    t.integer  "ram_id"
+    t.integer  "gpu_id"
+    t.integer  "cpu_id"
+    t.integer  "power_id"
   end
 
   add_index "computers", ["name"], name: "index_computers_on_name", unique: true
