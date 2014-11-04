@@ -18,7 +18,7 @@ describe Computer do
   #before do
   #  @computer = Computer.new(name: "Example Comp", status: false, price: 2)
  # end
-  before { @computer = Computer.new(name: "Example Comp", status: false, price: 0) }
+  before { @computer = Computer.new(name: "ExampleComp", status: false, price: 0, user_id:1) }
 
   subject { @computer }
 
@@ -26,14 +26,19 @@ describe Computer do
   it { should respond_to(:status) }
   it { should respond_to(:price) }
   it { should respond_to(:user_id) }
-  it { should respond_to(:user) }
+  it { should respond_to(:motherboard_id) }
+  it { should respond_to(:hd_id) }
+  it { should respond_to(:ram_id) }
+  it { should respond_to(:gpu_id) }
+  it { should respond_to(:cpu_id) }
+  it { should respond_to(:power_id) }
   #its(:user) { should == user }
 
   it { should be_valid }
   
    describe "when user_id is not present" do
-   # before { @computer.user_id = nil }
-   # it { should_not be_valid }
+    before { @computer.user_id = nil }
+    it { should_not be_valid }
   end
 
    describe "accessible attributes" do
@@ -51,8 +56,8 @@ describe Computer do
   end
 
   describe "when status is not present" do
-    #before { @computer.status = nil }
-    #it { should_not be_valid }
+   # before { @computer.status = nil }
+   # it { should_not be_valid }
   end
 
   describe "when price is not present" do
