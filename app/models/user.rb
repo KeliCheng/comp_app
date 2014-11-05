@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token #Used for remembering sessions
-	  validates :password, :confirmation => true
+	  attr_accessible :name, :password, :password_confirmation, :email
+		validates :password, :confirmation => true
 		validates :password_confirmation, :presence => true
 		validates :name, presence: true, uniqueness: true
 		validates :email, presence: true, uniqueness: true
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-  
+
   def User.new_token
     SecureRandom.urlsafe_base64
   end
