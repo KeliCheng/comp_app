@@ -14,6 +14,7 @@
         <th></th>
         <th><center>ID</center></th>
         <th><center>Speed</center></th>
+        <th><center>Price</center></th>
       </tr>
 
       <% @cpu.each do |f| %>
@@ -21,6 +22,7 @@
           <td><input type="radio" name="cpu_choice" value=f.id /></td>
           <td><%= f.id %></td>
           <td><%= f.speed %> GHz</td>
+          <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>

@@ -14,6 +14,7 @@
         <th></th>
         <th><center>ID</center></th>
         <th><center>Voltage</center></th>
+        <th><center>Price</center></th>
       </tr>
 
       <% @power.each do |f| %>
@@ -21,6 +22,7 @@
           <td><input type="radio" name="powersupply_choice" value=f.id /></td>
           <td><%= f.id %></td>
           <td><%= f.voltage %> V</td>
+          <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>

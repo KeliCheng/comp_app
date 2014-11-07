@@ -13,12 +13,14 @@
       <tr>
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Price</center></th>
       </tr>
 
       <% @mother.each do |f| %>
         <tr>
           <td><input type="radio" name="motherboard_choice" value=f.id /></td>
           <td><%= f.id %></td>
+          <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>
