@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104212848) do
+ActiveRecord::Schema.define(version: 20141108191624) do
 
   create_table "computers", force: true do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20141104212848) do
     t.string   "speed"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mb_compad"
   end
 
   create_table "gpus", force: true do |t|
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141104212848) do
     t.string   "vram"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mb_compad"
   end
 
   create_table "hds", force: true do |t|
@@ -49,12 +51,17 @@ ActiveRecord::Schema.define(version: 20141104212848) do
     t.string   "size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mb_compad"
   end
 
   create_table "motherboards", force: true do |t|
     t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cpu_compad"
+    t.string   "gpu_compad"
+    t.string   "ram_compad"
+    t.string   "hd_compad"
   end
 
   create_table "powers", force: true do |t|
@@ -69,6 +76,7 @@ ActiveRecord::Schema.define(version: 20141104212848) do
     t.string   "size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mb_compad"
   end
 
   create_table "users", force: true do |t|
