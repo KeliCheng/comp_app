@@ -1,14 +1,8 @@
 <% provide(:title, 'Power Supply') %>
-<!DOCTYPE html>
-<html>
-<head>
- <title>Computer | <%= yield(:title) %></title>
-</head>
 <center><h1>Power Supply</h1></center>
 
 <center>
-  <body>
-    
+  <body>    
      <table style="width:100%">
       <tr>
         <th></th>
@@ -17,13 +11,16 @@
         <th><center>Price</center></th>
       </tr>
 
+<%=form_for(@computer) do |power_form|%>
       <% @power.each do |f| %>
         <tr>
-          <td><input type="radio" name="powersupply_choice" value=f.id /></td>
+          <td><%=power_form.radio_button :power_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td><%= f.voltage %> V</td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>
+    <%=power_form.submit "Save" %>
+  <%end%>
   </center>

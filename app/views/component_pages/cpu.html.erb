@@ -1,14 +1,7 @@
 <% provide(:title, 'CPU') %>
-<!DOCTYPE html>
-<html>
-<head>
- <title>Computer | <%= yield(:title) %></title>
-</head>
 <center><h1>CPU</h1></center>
 
-<center>
-  <body>
-    
+  <center> 
      <table style="width:100%">
       <tr>
         <th></th>
@@ -17,20 +10,24 @@
         <th><center>Price</center></th>
       </tr>
 
+      <%=form_for(@computer) do |cpu_form|%>
       <% @cpu.each do |f| %>
         <tr>
-          <td><input type="radio" name="cpu_choice" value=f.id /></td>
+          <td><%=cpu_form.radio_button :cpu_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td><%= f.speed %> GHz</td>
           <td>$<%= f.price %></td>
         </tr>
-      <% end %>
+        <%end%>
+
     </table>
+            <%=cpu_form.submit "Save" %>
+      <% end %>
+
   </center>
+
 
 <div align="right">
   <%= link_to "Next", component_pages_rvm_path,
   class: "btn btn-large btn-primary" %>
 </div>
-</body>
-</html>

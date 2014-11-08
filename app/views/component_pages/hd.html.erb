@@ -1,9 +1,4 @@
 <% provide(:title, 'HD') %>
-<!DOCTYPE html>
-<html>
-<head>
- <title>Computer | <%= yield(:title) %></title>
-</head>
 <center><h1>HD</h1></center>
 
 <center>
@@ -14,18 +9,21 @@
         <th></th>
         <th><center>ID</center></th>
         <th><center>Size</center></th>
-        <th><center>Price</center><th>
+        <th><center>Price</center></th>
       </tr>
 
+      <%=form_for(@computer) do |hd_form|%>
       <% @hd.each do |f| %>
         <tr>
-          <td><input type="radio" name="hd_choice" value=f.id /></td>
+          <td><%=hd_form.radio_button :hd_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td><%= f.size %></td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>
+    <%=hd_form.submit "Save" %>
+        <%end%>
   </center>
 
 

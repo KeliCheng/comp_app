@@ -1,9 +1,4 @@
 <% provide(:title, 'GPU') %>
-<!DOCTYPE html>
-<html>
-<head>
- <title>Computer | <%= yield(:title) %></title>
-</head>
 <center><h1>GPU</h1></center>
 
 <center>
@@ -13,19 +8,22 @@
       <tr>
         <th></th>
         <th><center>ID</center></th>
-        <th><center>VRAM</center><th>
-        <th><center>Price</center><th>
+        <th><center>VRAM</center></th>
+        <th><center>Price</center></th>
       </tr>
 
+      <%=form_for(@computer) do |gpu_form|%>
       <% @gpu.each do |f| %>
         <tr>
-          <td><input type="radio" name="gpu_choice" value=f.id /></td>
+          <td><%=gpu_form.radio_button :gpu_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td><%= f.vram %></td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>
+    <%=gpu_form.submit "Save" %>
+    <%end%>
   </center>
 
 

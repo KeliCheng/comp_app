@@ -1,9 +1,4 @@
 <% provide(:title, 'RAM') %>
-<!DOCTYPE html>
-<html>
-<head>
- <title>Computer | <%= yield(:title) %></title>
-</head>
 <center><h1>RAM</h1></center>
 
 <center>
@@ -17,15 +12,18 @@
         <th><center>Price</center></th>
       </tr>
 
+      <%=form_for(@computer) do |ram_form|%>
       <% @rvm.each do |f| %>
         <tr>
-          <td><input type="radio" name="ram_choice" value=f.id /></td>
+          <td><%=ram_form.radio_button :ram_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td><%= f.size %> GB</td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>
+    <%=ram_form.submit "Save" %>
+    <%end%>
   </center>
 
 
@@ -35,4 +33,3 @@
   </div>
 
   </body>
-</html>

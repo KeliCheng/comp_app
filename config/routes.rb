@@ -1,5 +1,6 @@
 CompApp::Application.routes.draw do
 resources :users
+resources :computers
 
   get "component_pages/cpu"
   get "component_pages/rvm"

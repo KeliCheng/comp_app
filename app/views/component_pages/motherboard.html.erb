@@ -1,41 +1,33 @@
 <% provide(:title, 'Motherboard') %>
-<!DOCTYPE html>
-<html>
-<head>
- <title>Computer | <%= yield(:title) %></title>
-</head>
 <center><h1>Motherboard</h1></center>
 
 <center>
-  <body>
-    
      <table style="width:100%">
       <tr>
         <th></th>
         <th><center>ID</center></th>
         <th><center>Price</center></th>
       </tr>
+</center>
 
-      <% @mother.each do |f| %>
-        <tr>
-          <td><input type="radio" name="motherboard_choice" value=f.id /></td>
+  <%=form_for(@computer) do |mobo_form|%>
+
+    <% @mother.each do |f| %>
+    <tr>
+          <td><%=mobo_form.radio_button :motherboard_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
-    </table>
-  </center>
 
+  </table>
+  <%=mobo_form.submit "Save" %>
+  <%end%>
 
 
 
   <div align="right">
   <%= link_to "Next", component_pages_cpu_path,
                                 class: "btn btn-large btn-primary" %>
-</div>
-
   </div>
-
-  </body>
-
-</html>
+  </div>
