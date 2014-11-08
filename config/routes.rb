@@ -1,4 +1,5 @@
 CompApp::Application.routes.draw do
+  get "computers/summary"
 resources :users
 resources :computers
 

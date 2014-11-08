@@ -1,4 +1,15 @@
 class ComputersController < ApplicationController
+
+  def summary
+    @computer = Computer.find_by(user_id: current_user.id)
+    @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
+    @cpu = Cpu.find_by(id: @computer.cpu_id)
+    @ram = Ram.find_by(id: @computer.ram_id)
+    @gpu = Gpu.find_by(id: @computer.gpu_id)
+    @hd = Hd.find_by(id: @computer.hd_id)
+    @power = Power.find_by(id: @computer.power_id)
+  end
+
   def new
   	@computer = Computer.new
   end

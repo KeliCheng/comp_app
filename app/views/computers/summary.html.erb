@@ -1,0 +1,51 @@
+<% provide(:title, 'Summary') %>
+<center><h1>Summary</h1></center>
+
+<center>
+  <body>   
+  <p><center>Computer ID: <%= @computer.id %><br>
+    Name: <%= @computer.name %><br>
+    Status: <%= @computer.status %></center></p>
+
+     <table style="width:100%">
+      <tr>
+        <th><center>Part</center></th>
+        <th><center>Description</center></th>
+      </tr>
+        <tr>
+          <td>Motherboard<br></td>
+          <td><p>ID: <%= @motherboard.id %><br>
+            $<%= @motherboard.price %></p></td>
+        </tr>
+        <tr>
+          <td>CPU<br><br></td>
+          <td><p>ID: <%= @cpu.id %><br>
+            <%= @cpu.speed %> GHz<br>
+            $<%= @cpu.price %></p></td>
+        </tr>
+        <tr>
+          <td>RAM<br><br></td>
+          <td><p>ID: <%= @ram.id %><br>
+            <%= @ram.size %> GB<br>
+            $<%= @ram.price %></p></td>
+        </tr>
+        <tr>
+          <td>GPU<br><br></td>
+          <td><p>ID: <%= @gpu.id %><br>
+            <%= @gpu.vram %> GB<br>
+            $<%= @gpu.price %></p></td>
+        </tr>
+        <tr>
+          <td>HD<br><br></td>
+          <td><p>ID: <%= @hd.id %><br>
+            <%= @hd.size %> GB<br>
+            $<%= @hd.price %></p></td>
+        </tr>
+        <tr>
+          <td>Power Supply<br><br></td>
+          <td><p>ID: <%= @power.id %><br>
+            <%= @power.voltage %> V<br>
+            $<%= @power.price %></p></td>
+        </tr>
+    </table>
+</center>
