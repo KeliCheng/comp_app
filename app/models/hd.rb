@@ -1,3 +1,3 @@
 class Hd < ActiveRecord::Base
-  attr_accessible :price, :size
+  attr_accessible :price, :size, :mb_compad
 end
