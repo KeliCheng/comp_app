@@ -8,6 +8,7 @@
       <tr>
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Type</center></th>
         <th><center>VRAM</center></th>
         <th><center>Price</center></th>
       </tr>
@@ -17,6 +18,7 @@
         <tr>
           <td><%=gpu_form.radio_button :gpu_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <td><%= f.mb_compad %></td>
           <td><%= f.vram %></td>
           <td>$<%= f.price %></td>
         </tr>

@@ -6,6 +6,10 @@
       <tr>
         <th></th>
         <th><center>ID</center></th>
+        <th><center>CPU Type</center></th>
+        <th><center>GPU Type</center></th>
+        <th><center>RAM Type</center></th>
+        <th><center>HD Type</center></th>
         <th><center>Price</center></th>
       </tr>
 </center>
@@ -16,6 +20,10 @@
     <tr>
           <td><%=mobo_form.radio_button :motherboard_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <td><%= f.cpu_compad %></td>
+          <td><%= f.gpu_compad %></td>
+          <td><%= f.ram_compad %></td>
+          <td><%= f.hd_compad %></td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>

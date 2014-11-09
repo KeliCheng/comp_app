@@ -6,6 +6,7 @@
       <tr>
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Type</center></th>
         <th><center>Speed</center></th>
         <th><center>Price</center></th>
       </tr>
@@ -15,6 +16,7 @@
         <tr>
           <td><%=cpu_form.radio_button :cpu_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <td><%= f.mb_compad %></td>
           <td><%= f.speed %> GHz</td>
           <td>$<%= f.price %></td>
         </tr>
