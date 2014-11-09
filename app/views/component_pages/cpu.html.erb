@@ -2,8 +2,8 @@
 <center><h1>CPU</h1></center>
 
   <center> 
-     <table style="width:100%">
-      <tr>
+     <table class="table">
+      <tr class="active">
         <th></th>
         <th><center>ID</center></th>
         <th><center>Type</center></th>
@@ -23,10 +23,12 @@
         <%end%>
 
     </table>
-            <%=cpu_form.submit "Save" %>
+            <%=cpu_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
       <% end %>
 
   </center>
+
+  
 
 
 <div align="right">

@@ -8,7 +8,7 @@
 
 Motherboard.create(price:10.00, cpu_compad:"A", gpu_compad:"B", ram_compad:"C", hd_compad:"A")
 Motherboard.create(price:20.00, cpu_compad:"B", gpu_compad:"C", ram_compad:"A", hd_compad:"B")
-Motherboard.create(price:30.00, cpu_compad:"c", gpu_compad:"A", ram_compad:"B", hd_compad:"C")
+Motherboard.create(price:30.00, cpu_compad:"C", gpu_compad:"A", ram_compad:"B", hd_compad:"C")
 Motherboard.create(price:40.00, cpu_compad:"A", gpu_compad:"B", ram_compad:"C", hd_compad:"A")
 Motherboard.create(price:50.00, cpu_compad:"B", gpu_compad:"C", ram_compad:"A", hd_compad:"B")
 

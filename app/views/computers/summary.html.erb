@@ -7,8 +7,8 @@
     Name: <%= @computer.name %><br>
     Status: <%= @computer.status %></center></p>
 
-     <table style="width:100%">
-      <tr>
+     <table class="table">
+      <tr class="active">
         <th><center>Part</center></th>
         <th><center>Description</center></th>
       </tr>
@@ -16,8 +16,8 @@
           <td>Motherboard<br></td>
           <td><p>ID: <%= @motherboard.id %><br>
             CPU Type: <%= @motherboard.cpu_compad %><br>
-            GPU Type: <%= @motherboard.gpu_compad %><br>
             RAM Type: <%= @motherboard.ram_compad %><br>
+            GPU Type: <%= @motherboard.gpu_compad %><br>
             HD  Type: <%= @motherboard.hd_compad %><br>
             $<%= @motherboard.price %></p></td>
         </tr>

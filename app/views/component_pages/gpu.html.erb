@@ -4,8 +4,8 @@
 <center>
   <body>
     
-     <table style="width:100%">
-      <tr>
+     <table class="table">
+      <tr class="active">
         <th></th>
         <th><center>ID</center></th>
         <th><center>Type</center></th>
@@ -19,14 +19,16 @@
           <td><%=gpu_form.radio_button :gpu_id, value = f.id%></td>
           <td><%= f.id %></td>
           <td><%= f.mb_compad %></td>
-          <td><%= f.vram %></td>
+          <td><%= f.vram %> GB</td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
     </table>
-    <%=gpu_form.submit "Save" %>
+    <%=gpu_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
     <%end%>
   </center>
+
+ 
 
 
     <div align="right">

@@ -2,8 +2,8 @@
 <center><h1>Motherboard</h1></center>
 
 <center>
-     <table style="width:100%">
-      <tr>
+     <table class="table">
+      <tr class="active">
         <th></th>
         <th><center>ID</center></th>
         <th><center>CPU Type</center></th>
@@ -29,13 +29,16 @@
       <% end %>
 
   </table>
-  <%=mobo_form.submit "Save" %>
+  
+  
+  <%=mobo_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
   <%end%>
 
+  
 
 
   <div align="right">
   <%= link_to "Next", component_pages_cpu_path,
                                 class: "btn btn-large btn-primary" %>
   </div>
-  </div>
+  

@@ -3,8 +3,8 @@
 
 <center>
   <body>    
-     <table style="width:100%">
-      <tr>
+     <table class="table">
+      <tr class="active">
         <th></th>
         <th><center>ID</center></th>
         <th><center>Voltage</center></th>
@@ -21,9 +21,11 @@
         </tr>
       <% end %>
     </table>
-    <%=power_form.submit "Save" %>
+    <%=power_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
   <%end%>
   </center>
+
+  
 
   <div align="right">
   <%= link_to "Next", computers_summary_path,

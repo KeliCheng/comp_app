@@ -4,8 +4,8 @@
 <center>
   <body>
     
-     <table style="width:100%">
-      <tr>
+     <table class="table">
+      <tr class="active">
         <th></th>
         <th><center>ID</center></th>
         <th><center>Type</center></th>
@@ -24,9 +24,11 @@
         </tr>
       <% end %>
     </table>
-    <%=hd_form.submit "Save" %>
+    <%=hd_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
         <%end%>
   </center>
+
+  
 
 
     <div align="right">
