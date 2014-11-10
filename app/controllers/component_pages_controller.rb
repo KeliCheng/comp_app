@@ -14,7 +14,7 @@ class ComponentPagesController < ApplicationController
     @cpuprice = Cpu.find_by(id: @computer.cpu_id)
     @computer.price = @moboprice.price + @cpuprice.price
     @computer.save
-    @cpu = Cpu.where(Motherboard.find_by(id: @computer.motherboard_id).cpu_compad == Cpu.mb_compad)
+    @cpu = Cpu.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).cpu_compad)
         #Cpu.where(Computer.find_by(user_id: current_user.id).A == Cpu.A)
   end
 
