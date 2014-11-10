@@ -14,7 +14,7 @@ class ComponentPagesController < ApplicationController
     @cpuprice = Cpu.find_by(id: @computer.cpu_id)
     @computer.price = @moboprice.price + @cpuprice.price
     @computer.save
-    @cpu = Cpu.all
+    @cpu = Cpu.where(Motherboard.find_by(id: @computer.motherboard_id).cpu_compad == Cpu.mb_compad)
         #Cpu.where(Computer.find_by(user_id: current_user.id).A == Cpu.A)
   end
 
@@ -25,7 +25,7 @@ class ComponentPagesController < ApplicationController
     @rvmprice = Ram.find_by(id: @computer.ram_id)
     @computer.price = @moboprice.price + @cpuprice.price + @rvmprice.price
     @computer.save
-    @rvm = Ram.all
+    @rvm = Ram.where(Motherboard.find_by(id: @computer.motherboard_id).ram_compad == Ram.mb_compad)
   end
 
 def gpu
@@ -36,7 +36,7 @@ def gpu
   @gpuprice = Gpu.find_by(id: @computer.gpu_id)
   @computer.price = @moboprice.price + @cpuprice.price + @rvmprice.price + @gpuprice.price
   @computer.save
-  @gpu = Gpu.all
+ @gpu = Gpu.where(Motherboard.find_by(id: @computer.motherboard_id).gpu_compad == Gpu.mb_compad)
 end
 
   def hd
@@ -49,7 +49,7 @@ end
     @computer.price = @moboprice.price + @cpuprice.price + @rvmprice.price +
     @gpuprice.price + @hdprice.price
     @computer.save
-    @hd = Hd.all
+    @hd = Hd.where(Motherboard.find_by(id: @computer.motherboard_id).hd_compad == Hd.mb_compad)
   end
 
   def power
