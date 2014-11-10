@@ -1,8 +1,21 @@
 <% provide(:title, 'CPU') %>
 <center><h1>CPU</h1></center>
+  <center>
+    <table style="width:100%">
+      <table style="width:20%;float:right;vertical-align:top">
+        <tr>
+          <th><div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Total price</h3>
+    </div>
+    <div class="panel-body">
+      <h2>$<%= @computer.price %></h2>
+    </div>
+  </div></th>
+        </tr>
+      </table>
 
-  <center> 
-     <table class="table">
+     <table class="table", style="width:80%;float:right;vertical-align:top">
       <tr class="active">
         <th></th>
         <th><center>ID</center></th>
@@ -21,14 +34,14 @@
           <td>$<%= f.price %></td>
         </tr>
         <%end%>
-
+      </table>
     </table>
             <%=cpu_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
       <% end %>
 
   </center>
 
-  
+
 
 
 <div align="right">
