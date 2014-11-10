@@ -2,11 +2,6 @@ class ComponentPagesController < ApplicationController
 
   def motherboard
     @mother = Motherboard.all
-    if (Computer.find_by(user_id: current_user.id) != nil)
-      @computer = Computer.find_by(user_id: current_user.id)
-    else
-      @computer = Computer.new
-    end
     @computer = Computer.find_by(user_id: current_user.id)
     @moboprice = Motherboard.find_by(id: @computer.motherboard_id)
     @computer.price = @moboprice.price
