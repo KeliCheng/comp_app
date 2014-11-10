@@ -19,8 +19,12 @@ class ComponentPagesController < ApplicationController
   end
 
   def cpu
+<<<<<<< HEAD
     init_prices
     @cpu = Cpu.all
+=======
+    @cpu = Cpu.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).cpu_compad)
+>>>>>>> 892bd5c578965de8c16425865bb1ea4419489659
         #Cpu.where(Computer.find_by(user_id: current_user.id).A == Cpu.A)
   end
 
