@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     if @user.save
         #sign_in @user
         flash[:success] = "Welcome to Build a Comp!"
+        Computer.create(user_id:@user.id, price:0, hd_id:1, motherboard_id:1, ram_id:1,gpu_id:1,power_id:1,cpu_id:1)
         redirect_to @user
       else
         render 'new'

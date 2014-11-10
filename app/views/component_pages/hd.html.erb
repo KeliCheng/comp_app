@@ -13,7 +13,7 @@
       </tr>
 
       <%=form_for(@computer) do |hd_form|%>
-      <% @hd.each do |f| %>
+      <% @hd.drop(1).each do |f| %>
         <tr>
           <td><%=hd_form.radio_button :hd_id, value = f.id%></td>
           <td><%= f.id %></td>

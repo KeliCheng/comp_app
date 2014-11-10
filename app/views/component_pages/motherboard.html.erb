@@ -17,7 +17,7 @@
 
   <%=form_for(@computer) do |mobo_form|%>
 
-    <% @mother.each do |f| %>
+    <% @mother.drop(1).each do |f| %>
     <tr>
           <td><%=mobo_form.radio_button :motherboard_id, value = f.id%></td>
           <td><%= f.id %></td>

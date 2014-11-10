@@ -13,7 +13,7 @@
       </tr>
 
       <%=form_for(@computer) do |cpu_form|%>
-      <% @cpu.each do |f| %>
+      <% @cpu.drop(1).each do |f| %>
         <tr>
           <td><%=cpu_form.radio_button :cpu_id, value = f.id%></td>
           <td><%= f.id %></td>

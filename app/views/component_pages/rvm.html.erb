@@ -13,7 +13,7 @@
       </tr>
 
       <%=form_for(@computer) do |ram_form|%>
-      <% @rvm.each do |f| %>
+      <% @rvm.drop(1).each do |f| %>
         <tr>
           <td><%=ram_form.radio_button :ram_id, value = f.id%></td>
           <td><%= f.id %></td>

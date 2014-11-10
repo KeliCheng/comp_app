@@ -12,7 +12,7 @@
       </tr>
 
 <%=form_for(@computer) do |power_form|%>
-      <% @power.each do |f| %>
+      <% @power.drop(1).each do |f| %>
         <tr>
           <td><%=power_form.radio_button :power_id, value = f.id%></td>
           <td><%= f.id %></td>
