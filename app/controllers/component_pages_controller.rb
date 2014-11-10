@@ -39,6 +39,7 @@ class ComponentPagesController < ApplicationController
     @hd = Hd.all
   end
 
+
   def power
     init_prices
     @power = Power.all
