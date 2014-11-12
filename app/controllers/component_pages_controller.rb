@@ -27,7 +27,7 @@ class ComponentPagesController < ApplicationController
   def rvm
     init_prices
     #@rvm = Ram.all
-    @rvm = Rvm.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).ram_compad)
+    @rvm = Ram.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).ram_compad)
   end
 
   def gpu

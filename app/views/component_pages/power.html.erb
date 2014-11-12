@@ -7,7 +7,7 @@
       <tr class="active">
         <th></th>
         <th><center>ID</center></th>
-        <th><center>Voltage</center></th>
+        <th><center>Watts</center></th>
         <th><center>Price</center></th>
       </tr>
 
@@ -16,7 +16,7 @@
         <tr>
           <td><%=power_form.radio_button :power_id, value = f.id%></td>
           <td><%= f.id %></td>
-          <td><%= f.voltage %> V</td>
+          <td><%= f.voltage %> Watts</td>
           <td>$<%= f.price %></td>
         </tr>
       <% end %>
