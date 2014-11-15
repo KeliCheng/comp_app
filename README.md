@@ -1,6 +1,6 @@
 comp_app
 ========
-Shannon Kelly\n
+Shannon Kelly
 Keli Cheng
 Jorge Rivera
 Bobby Richmond
