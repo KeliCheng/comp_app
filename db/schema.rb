@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20141108191624) do
 
   create_table "powers", force: true do |t|
     t.decimal  "price"
-    t.string   "voltage"
+    t.string   "watts"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
