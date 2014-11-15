@@ -29,16 +29,16 @@ describe "Component pages" do
     end
   end
 
-   describe "rvm page" do
+   describe "ram page" do
      it "should have the h1 'Comp App'" do
-      visit '/component_pages/rvm'
+      visit '/component_pages/ram'
       page.should have_selector('h1', :text => 'Comp App')
     end
 
-    it "should have the title 'RVM'" do
-      visit '/component_pages/rvm'
+    it "should have the title 'RAM'" do
+      visit '/component_pages/ram'
       page.should have_selector('title',
-                        :text => "Computer | RVM")
+                        :text => "Computer | RAM")
     end
   end
 

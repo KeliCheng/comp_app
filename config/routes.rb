@@ -4,7 +4,7 @@ resources :users
 resources :computers
 
   get "component_pages/cpu"
-  get "component_pages/rvm"
+  get "component_pages/ram"
   get "component_pages/motherboard"
   get "users/edit"
   get "users/new"
