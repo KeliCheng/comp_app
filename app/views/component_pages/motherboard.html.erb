@@ -35,7 +35,9 @@
   <%=mobo_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
   <%end%>
 
-  <div align="right">
-  <%= link_to "Next", component_pages_cpu_path,
-                                class: "btn btn-large btn-primary" %>
-  </div>
+  
+
+  <ul class="pager">
+    <li class="previous disabled"><%= link_to "← Previous"%></li>
+    <li class="next"><%= link_to "Next →", component_pages_cpu_path%></li>
+  </ul>
