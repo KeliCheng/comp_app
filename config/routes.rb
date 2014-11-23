@@ -1,11 +1,19 @@
 CompApp::Application.routes.draw do
-  get "computers/summary"
-resources :users
-resources :computers
 
+  get "computers/summary"
+  get "computers/delete_mobo"
+  get "computers/delete_cpu"
+  get "computers/delete_gpu"
+  get "computers/delete_ram"
+  get "computers/delete_hd"
+  get "computers/delete_power"
   get "component_pages/cpu"
   get "component_pages/ram"
   get "component_pages/motherboard"
+
+  resources :users
+  resources :computers
+
   get "users/edit"
   get "users/new"
   get "component_pages/index"
