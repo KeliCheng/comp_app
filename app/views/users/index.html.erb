@@ -1,0 +1,19 @@
+
+<center><h1>All users</h1></center>
+
+<ul >
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>
+      <% @computers.each do |comp| %>
+        <% if user.id == comp.user_id %>
+        <%= comp.name %>
+        <% end %>
+          <% end %>
+
+    </li>
+      <% end %>
+
+
+
+</ul>

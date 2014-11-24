@@ -16,6 +16,7 @@ CompApp::Application.routes.draw do
 
   get "users/edit"
   get "users/new"
+  get "users/index"
   get "component_pages/index"
   get "component_pages/gpu"
   get "component_pages/hd"
