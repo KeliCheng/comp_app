@@ -4,6 +4,7 @@
      <table class="table", style="width:80%;vertical-align:top">
       <tr class="active">
         <th><center>ID</center></th>
+        <th><center>User's ID</center></th>
         <th><center>Name</center></th>
         <th><center>Motherboard ID</center></th>
         <th><center>CPU ID</center></th>
@@ -14,6 +15,7 @@
       <% @similar_motherboards.each do |f| %>
         <tr>
           <td><%= f.id %></td>
+          <td><%= f.user_id %></td>
           <td><%= f.name%></td>
           <td><%= f.motherboard_id %></td>
           <td><%= f.cpu_id %></td>
