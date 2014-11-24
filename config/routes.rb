@@ -1,4 +1,7 @@
 CompApp::Application.routes.draw do
+  get "similar_computers/menu"
+  get "similar_computers/similar_price"
+  get "similar_computers/similar_components"
   get "computers/summary"
 resources :users
 resources :computers
