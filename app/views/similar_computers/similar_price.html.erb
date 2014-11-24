@@ -1,0 +1,27 @@
+<% provide(:title, 'Similar Price') %>
+<center>
+    <table style="width:100%">
+     <table class="table", style="width:80%;vertical-align:top">
+      <tr class="active">
+        <th><center>ID</center></th>
+        <th><center>Name</center></th>
+        <th><center>Motherboard ID</center></th>
+        <th><center>CPU ID</center></th>
+        <th><center>GPU ID</center></th>
+        <th><center>Hard Drive ID</center></th>
+      </tr>
+
+      <% @similar_computers.each do |f| %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.name%></td>
+          <td><%= f.motherboard_id %></td>
+          <td><%= f.cpu_id %></td>
+          <td><%= f.gpu_id %></td>
+          <td><%= f.hd_id %></td>
+        </tr>
+        <%end%>
+      </table>
+    </table>
+
+ </center>
