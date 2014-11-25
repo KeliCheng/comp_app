@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122224030) do
+ActiveRecord::Schema.define(version: 20141125025406) do
 
   create_table "computers", force: true do |t|
     t.string   "name"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20141122224030) do
     t.datetime "updated_at"
     t.string   "mb_compad"
     t.integer  "watts"
+    t.string   "name"
+    t.integer  "cores"
   end
 
   create_table "gpus", force: true do |t|
@@ -46,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141122224030) do
     t.datetime "updated_at"
     t.string   "mb_compad"
     t.integer  "watts"
+    t.string   "name"
   end
 
   create_table "hds", force: true do |t|
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 20141122224030) do
     t.datetime "updated_at"
     t.string   "mb_compad"
     t.integer  "watts"
+    t.string   "name"
   end
 
   create_table "motherboards", force: true do |t|
@@ -66,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141122224030) do
     t.string   "ram_compad"
     t.string   "hd_compad"
     t.integer  "watts"
+    t.string   "name"
   end
 
   create_table "powers", force: true do |t|
@@ -73,6 +78,7 @@ ActiveRecord::Schema.define(version: 20141122224030) do
     t.integer  "watts"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "rams", force: true do |t|
@@ -82,6 +88,7 @@ ActiveRecord::Schema.define(version: 20141122224030) do
     t.datetime "updated_at"
     t.string   "mb_compad"
     t.integer  "watts"
+    t.string   "name"
   end
 
   create_table "users", force: true do |t|

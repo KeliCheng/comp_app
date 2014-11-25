@@ -15,7 +15,9 @@
       <tr class="active">
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Name</center></th>
         <th><center>Type</center></th>
+        <th><center>Cores</center></th>
         <th><center>Speed</center></th>
         <th><center>Watts</center></th>
         <th><center>Price</center></th>
@@ -26,7 +28,9 @@
         <tr>
           <td><%=cpu_form.radio_button :cpu_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <td><%= f.name %></td>
           <td><%= f.mb_compad %></td>
+          <td><%= f.cores %></td>
           <td><%= f.speed %> GHz</td>
           <td><%= f.watts %> Watts</td>
           <td>$<%= f.price %></td>

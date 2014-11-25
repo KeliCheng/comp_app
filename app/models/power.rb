@@ -1,3 +1,3 @@
 class Power < ActiveRecord::Base
-  attr_accessible :price, :watts
+  attr_accessible :price, :watts, :name
 end
