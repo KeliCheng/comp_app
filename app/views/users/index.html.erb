@@ -1,19 +1,26 @@
 
 <center><h1>All users</h1></center>
 
-<ul >
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <% @users.each do |user| %>
-    <li>
-      <%= user.name %>
-      <% @computers.each do |comp| %>
-        <% if user.id == comp.user_id %>
-        <%= comp.name %>
-        <% end %>
-          <% end %>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#<%= user.name %>" aria-expanded="true" aria-controls="<%= user.name %>">
+          <center> <%= user.name %> </center>
+        </h4>
+      </div>
+    </a>
 
-    </li>
-      <% end %>
+    <div id="<%= user.name %>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="<%= user.name %>">
+      <div class="panel-body">
+<% Computer.where(user_id:user.id).each do |f| %>
+<%= f.name %>
+<% end %>
+      </div>
+    </div>
+  </div>
 
 
-
-</ul>
+  <% end %>
+</div>

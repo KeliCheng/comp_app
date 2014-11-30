@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+	before_action :logged_in_user, only: [:index, :edit, :update]
 	def edit
     @user = User.find(params[:id])
 	end
@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   end
 
 	def index
+
 		@users = User.all
-    @computers = Computer.all
+		@computers = Computer.all
   end
 
   def create
@@ -44,7 +45,13 @@ class UsersController < ApplicationController
 
   def user_params
    params.require(:user).permit(:name, :email, :password, :password_confirmation)
- end
+  end
 
+	def logged_in_user
+		unless logged_in?
+			flash[:danger] = "Please log in."
+			redirect_to login_url
+		end
+	end
 
 end
