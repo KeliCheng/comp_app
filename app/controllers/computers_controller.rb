@@ -3,12 +3,15 @@ class ComputersController < ApplicationController
 
   def summary
     @computer = Computer.find_by(user_id: current_user.id)
+    # if motherboard_id == nil 
+
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @cpu = Cpu.find_by(id: @computer.cpu_id)
     @ram = Ram.find_by(id: @computer.ram_id)
     @gpu = Gpu.find_by(id: @computer.gpu_id)
     @hd = Hd.find_by(id: @computer.hd_id)
     @power = Power.find_by(id: @computer.power_id)
+    @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1 
   end
 
   def new
@@ -27,10 +30,43 @@ class ComputersController < ApplicationController
     end
   end
 
+  def publish #check motherboard and power supply when trying to publish/share 
+    @computer = Computer.find_by(user_id: current_user.id)
+    @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
+    @cpu = Cpu.find_by(id: @computer.cpu_id)
+    @ram = Ram.find_by(id: @computer.ram_id)
+    @gpu = Gpu.find_by(id: @computer.gpu_id)
+    @hd = Hd.find_by(id: @computer.hd_id)
+    @power = Power.find_by(id: @computer.power_id)
+    @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1 
+
+    if @motherboard.cpu_compad != @cpu.mb_compad
+      flash[:danger] = 'Motherboard and CPU do not match.'
+      redirect_to :back
+    elsif @motherboard.ram_compad != @ram.mb_compad
+      flash[:danger] = 'Motherboard and RAM do not match.'
+      redirect_to :back
+    elsif @motherboard.gpu_compad != @gpu.mb_compad
+      flash[:danger] = 'Motherboard and GPU do not match.'
+      redirect_to :back
+    elsif @motherboard.hd_compad != @hd.mb_compad
+      flash[:danger] = 'Motherboard and HD do not match.'
+      redirect_to :back
+    elsif @power.watts < @sum_watts
+      flash[:danger] = 'Power Supply cannot support.'
+      redirect_to :back
+    else 
+      #publish or share this computer here 
+    end 
+
+  end 
+
+
+
   def delete_mobo
      @computer = Computer.find_by(user_id: current_user.id)
      # @computer = Computer.find(params[:id])
-    @computer.motherboard_id = 1 
+    @computer.motherboard_id = 1
     if @computer.save
       flash[:success] = "Motherboard deleted."
       redirect_to computers_summary_path

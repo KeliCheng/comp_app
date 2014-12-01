@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Motherboard.create(name:"",  price:0.00,  cpu_compad:"AMD", gpu_compad:"PCI 3.0 x16", ram_compad:"240-pin DDR3", hd_compad:"SATA 6.0 Gb/s", watts:10)
+# Motherboard.create(name:"----",  price:0.00,  cpu_compad:"AMD", gpu_compad:"PCI 3.0 x16", ram_compad:"240-pin DDR3", hd_compad:"SATA 6.0 Gb/s", watts:10)
+Motherboard.create(name:"----",  price:0.00,  cpu_compad:"-----", gpu_compad:"------", ram_compad:"-----", hd_compad:"----", watts:0)
 Motherboard.create(name:"EVGA X77 Classified",  price:379.00, cpu_compad:"Intel", gpu_compad:"PCI 2.0 x16", ram_compad:"240-pin DDR3", hd_compad:"SATA 3.0 Gb/s", watts:70)
 Motherboard.create(name:"Foxconn H1CC-UP",  price:29.00, cpu_compad:"Intel", gpu_compad:"PCI 2.0 x16", ram_compad:"240-pin DDR2", hd_compad:"SATA 3.0 Gb/s", watts:26)
 Motherboard.create(name:"GIGABYTE GA-F4TH0M",  price:52.00, cpu_compad:"AMD", gpu_compad:"PCI 3.0", ram_compad:"240-pin DDR3", hd_compad:"SAS 6.0 Gb/s", watts:32)
@@ -24,7 +25,7 @@ Motherboard.create(name:"ASUS 4PP-PLUS",  price:219.00, cpu_compad:"AMD", gpu_co
 Motherboard.create(name:"Lenovo IBM T4242",  price:118.00, cpu_compad:"AMD", gpu_compad:"PCI 3.0 x16", ram_compad:"240-pin DDR3", hd_compad:"SATA 6.0 Gb/s", watts:42)
 Motherboard.create(name:"ASRock FM3L PRO2+",  price:59.00, cpu_compad:"AMD", gpu_compad:"PCI 3.0 x16", ram_compad:"240-pin DDR2", hd_compad:"SAS 6.0 Gb/s", watts:38)
 
-Cpu.create(name:"",  cores:0,  price:0.00,   speed:"0", mb_compad:"AMD", watts:10)
+Cpu.create(name:"----",  cores:0,  price:0.00,   speed:"-----", mb_compad:"------", watts:0)
 Cpu.create(name:"740K Richland",  cores:4,  price:77.00, speed:"3.8", mb_compad:"AMD", watts:72)
 Cpu.create(name:"i5-3547K Ivy Bridge",  cores:4,  price:239.00, speed:"3.5", mb_compad:"Intel", watts:80)
 Cpu.create(name:"i7-9000K Ivy Bridge-E",  cores:4,  price:322.00, speed:"3.7", mb_compad:"Intel", watts:130)
@@ -43,7 +44,7 @@ Cpu.create(name:"Athlon I X2 244e",  cores:2,  price:61.00, speed:"3.9", mb_comp
 
 
 
-Gpu.create(name:"",  price:0.0,   vram:"0", mb_compad:"PCI 3.0", watts:10)
+Gpu.create(name:"----",  price:0.0,   vram:"-----", mb_compad:"-----", watts:0)
 Gpu.create(name:"EVGA 040X-P4-2745-KR GTX 760",  price:263.00, vram:"4", mb_compad:"PCI 3.0", watts:172)
 Gpu.create(name:"SAPPHIRE 100360-XL Radeon R7 260X",  price:114.00, vram:"2", mb_compad:"PCI 3.0", watts:82)
 Gpu.create(name:"XFX Core Edition QB3RT-LI Radeon R9 285",  price:799.00, vram:"8", mb_compad:"PCI 3.0", watts:310)
@@ -61,7 +62,7 @@ Gpu.create(name:"VisionTek 9000 Radeon HD 3650", price:59.00, vram:"1", mb_compa
 Gpu.create(name:"EVGA NVIDIA B0-AT GT 720",  price:90.00, vram:"1", mb_compad:"PCI 2.0 x16", watts:68)
 
 
-Ram.create(name:"",  price:0.0  , size:"0", mb_compad:"240-pin DDR3", watts:10)
+Ram.create(name:"----",  price:0.0  , size:"----", mb_compad:"-----", watts:0)
 Ram.create(name:"2x2 DELL OPTIPLEX 740",  price:49.00, size:"4", mb_compad:"240-pin DDR2", watts:3)
 Ram.create(name:"2x4 Axiom F33700-L4",  price:219.00, size:"8", mb_compad:"240-pin DDR2", watts:4)
 Ram.create(name:"2x4 Mushkin Enhaced Essentials 800",  price:89.00, size:"4", mb_compad:"240-pin DDR2", watts:3)
@@ -78,7 +79,7 @@ Ram.create(name:"2x4 G.Skill Ripjaws 4 series F4-3300",  price:351.00, size:"8",
 Ram.create(name:"4x8 CORSAIR Vengeance LPX CMK16-XM4",  price:949.00, size:"32", mb_compad:"288-pin DDR4", watts:2)
 Ram.create(name:"2x2 Adata XPG Z1 AX4U-W4G",  price:78.00, size:"4", mb_compad:"288-pin DDR4", watts:3)
 
-Hd.create(name:"",  price:0.00, size:"0", mb_compad:"SATA 6.0 Gb/s", watts:10)
+Hd.create(name:"-----",  price:0.00, size:"-----", mb_compad:"------", watts:0)
 Hd.create(name:"Seagate ST600-ALA",  price:187.00, size:"500", mb_compad:"SATA 6.0 Gb/s", watts:6)
 Hd.create(name:"WD Red WD60EFRX",  price:279.00, size:"750", mb_compad:"SATA 6.0 Gb/s", watts:9)
 Hd.create(name:"Toshiba MG03-ACA",  price:49.00, size:"500", mb_compad:"SATA 6.0 Gb/s", watts:7)
@@ -95,7 +96,7 @@ Hd.create(name:"HP QK-703-A",  price:34.00, size:"72", mb_compad:"SAS 6.0 Gb/s",
 Hd.create(name:"IBM 44W2244",  price:114.00, size:"300", mb_compad:"SAS 6.0 Gb/s", watts:6)
 Hd.create(name:"Seagate Cheetah STS508-SS",  price:343.00, size:"2000", mb_compad:"SAS 6.0 Gb/s", watts:8)
 
-Power.create(name:"",  price:0, watts:0)
+Power.create(name:"------",  price:0, watts:0)
 Power.create(name:"RAIDMAX Cobra RX-200 ATX 12V",  price:29.00, watts:220)
 Power.create(name:"CORSAIR CX series CX400 ATX",  price:44.00, watts:400)
 Power.create(name:"Rosewill CAPSTONE-600-M Continuous ATX 12V",  price:92.00, watts:600)

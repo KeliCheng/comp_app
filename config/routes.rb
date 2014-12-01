@@ -4,6 +4,7 @@ CompApp::Application.routes.draw do
   get "similar_computers/similar_components"
 
   get "computers/summary"
+  get "computers/publish"
   get "computers/delete_mobo"
   get "computers/delete_cpu"
   get "computers/delete_gpu"
