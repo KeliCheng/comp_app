@@ -16,8 +16,20 @@
       <div class="panel-body">
         <% Computer.where(user_id:user.id).each do |f| %>
             <% if current_user %>
-            Computer:<%= f.id %>
-            <%= rating_for f, "user_rating", disable_after_rate: true, imdb_avg: true,star_off: true %>
+
+
+
+            <table class="table table-striped">
+              <tr class="active">
+                <th><center>Computer:<%= f.id %></center>
+                </th>
+              </tr>
+              <tbody>
+                <tr class="active">
+                  <td><center><%= rating_for f, "user_rating", disable_after_rate: true, imdb_avg: true %></td></center>
+                </tr>
+              </tbody>
+            </table>
             <% end %>
         <% end %>
       </div>
