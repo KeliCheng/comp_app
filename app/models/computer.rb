@@ -12,6 +12,7 @@
 #
 
 class Computer < ActiveRecord::Base
+
 	attr_accessible :name, :status, :price, :user_id,
 	 :hd_id, :motherboard_id, :ram_id, :gpu_id, :cpu_id, :power_id
 	belongs_to :user
@@ -27,4 +28,5 @@ class Computer < ActiveRecord::Base
 	has_one :hd
 	has_one :power
 	has_one :ram
+	ratyrate_rateable 'user_rating'
 end

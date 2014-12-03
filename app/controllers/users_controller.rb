@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
 	def index
-
 		@users = User.all
 		@computers = Computer.all
   end

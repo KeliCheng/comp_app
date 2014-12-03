@@ -1,7 +1,7 @@
 
-<center><h1>All users</h1></center>
+<center><h1>All users</h1>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:25%">
   <% @users.each do |user| %>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -14,13 +14,15 @@
 
     <div id="<%= user.name %>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="<%= user.name %>">
       <div class="panel-body">
-<% Computer.where(user_id:user.id).each do |f| %>
-<%= f.name %>
-<% end %>
+        <% Computer.where(user_id:user.id).each do |f| %>
+            <% if current_user %>
+            Computer:<%= f.id %>
+            <%= rating_for f, "user_rating", disable_after_rate: true, imdb_avg: true,star_off: true %>
+            <% end %>
+        <% end %>
       </div>
     </div>
   </div>
-
-
   <% end %>
 </div>
+</center>
