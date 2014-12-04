@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20141202212723) do
     t.integer  "power_id"
   end
 
-  add_index "computers", ["name"], name: "index_computers_on_name", unique: true
+  add_index "computers", ["name"], name: "index_computers_on_name"
 
   create_table "cpus", force: true do |t|
     t.decimal  "price"
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20141202212723) do
     t.datetime "updated_at"
     t.string   "remember_digest"
     t.string   "password_digest"
+    t.integer  "current_comp"
   end
 
 end
