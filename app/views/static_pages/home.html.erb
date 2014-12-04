@@ -12,12 +12,53 @@
 				<% end %>
 				<br>
 				<br>
-<div>
+
+<!-- <div>
 				<%= link_to "Start", component_pages_motherboard_path,
 																			class: "btn btn-large btn-success" %>
-</div>
+</div> -->
 			</center>
 		</div>
+			  <table class="table", style="width:80%;float:right;vertical-align:top">
+      <tr class="active">
+        <th>Switch</th>
+        <th><center>ID</center></th>
+        <th><center>Name</center></th>
+        <th><center>Price</center></th>
+      </tr>
+      <% @computers.each do |f| %>
+        <tr>
+          <td>
+          	<%if current_user.current_comp != f.id%>
+          		<%= link_to "Make Current", computers_current_path(f.id)%>
+          	<%end%>
+          </td>
+          <td><%= f.id %></td>
+          <td><%= f.name %></td>
+          <td>$<%= f.price %></td>
+        </tr>
+       <%end%>
+        <tr>
+        	<td><%=link_to computers_new_path, class: "btn btn-sm btn-primary" do %>
+        		Create new Comp!
+        		<%end%>
+        		</td>
+        	<td><%=link_to computers_rename_path, class: "btn btn-sm btn-primary" do %>
+        		Rename Current Computer
+        		<%end%>
+        	</td>
+        	<td>
+        		<%=link_to similar_computers_menu_path, class: "btn btn-sm btn-primary" do %>
+        		View Similar Computers
+        		<%end%>
+            </td>
+            <td>
+        		<%=link_to computers_summary_path, class: "btn btn-sm btn-primary" do %>
+        		View Current Computer
+        		<%end%>
+            </td>
+        </tr>
+      </table>
 <% else %>
 <center><%= image_tag("logo.png") %></center><br>
 	<div class="center jumbotron">
