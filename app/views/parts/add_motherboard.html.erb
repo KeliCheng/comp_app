@@ -11,7 +11,7 @@
 		<%= f.text_field :name, class: 'form-control',:placeholder => "Name" %>
 
 		<%= f.label :price %>
-		<%= f.text_field :price, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :price, class: 'form-control',:placeholder => "0" %>
 
 		<%= f.label :cpu_compad, "CPU Compatability" %>
 		<%= f.radio_button :cpu_compad, "AMD", class: 'form-control' %>	<center><%= label_tag :cpu_compad_amd, "AMD" %></center>
@@ -33,7 +33,8 @@
 		<%= f.radio_button :hd_compad, "SAS 6.0 Gb/s", class: 'form-control' %> <center><%= label_tag :hd_compad_SAS_6, "SAS 6.0 Gb/s" %></center>
 
 		<%= f.label :watts %>
-		<%= f.text_field :watts, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :watts, class: 'form-control',:placeholder => "0" %>
+
 
 		<br/>
 		<br/>

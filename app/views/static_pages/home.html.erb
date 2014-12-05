@@ -75,15 +75,17 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+          <% @motherboards.each do |f| %>
+            <tr>
+              <td><%= f.name %></td>
+              <td><%= f.cpu_compad %></td>
+              <td><%= f.gpu_compad %></td>
+              <td><%= f.ram_compad %></td>
+              <td><%= f.hd_compad %></td>
+              <td><%= f.watts %></td>
+              <td><%= f.price %></td>
+            </tr> 
+          <% end %>
         </table>
 
         <center><h5>CPUs</h5></center>
@@ -97,14 +99,16 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+          <% @cpus.each do |f| %>
+            <tr>
+              <td><%= f.name %></td>
+              <td><%= f.mb_compad %></td>
+              <td><%= f.cores %></td>
+              <td><%= f.speed %></td>
+              <td><%= f.watts %></td>
+              <td><%= f.price %></td>
+            </tr> 
+          <% end %> 
         </table> 
 
 
@@ -117,13 +121,15 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+          <% @gpus.each do |f| %>
+            <tr>
+              <td><%= f.name %></td>
+              <td><%= f.mb_compad %></td>
+              <td><%= f.vram %></td>
+              <td><%= f.watts %></td>
+              <td><%= f.price %></td>
+            </tr> 
+          <% end %> 
         </table> 
 
         <center><h5>RAM</h5></center>
@@ -135,13 +141,15 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+          <% @rams.each do |f| %>
+            <tr>
+              <td><%= f.name %></td>
+              <td><%= f.mb_compad %></td>
+              <td><%= f.size %></td>
+              <td><%= f.watts %></td>
+              <td><%= f.price %></td>
+            </tr> 
+          <% end %> 
         </table> 
 
         <center><h5>HDs</h5></center>
@@ -153,13 +161,15 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <% @hds.each do |f| %>
+            <tr>
+              <td><%= f.name %></td>
+              <td><%= f.mb_compad %></td>
+              <td><%= f.size %></td>
+              <td><%= f.watts %></td>
+              <td><%= f.price %></td>
+            </tr> 
+          <% end %> 
         </table> 
 
         <center><h5>Power Supplies</h5></center>
@@ -169,11 +179,13 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <% @powers.each do |f| %>
+            <tr>
+              <td><%= f.name %></td>
+              <td><%= f.watts %></td>
+              <td><%= f.price %></td>
+            </tr> 
+          <% end %> 
         </table> 
 
       <br>

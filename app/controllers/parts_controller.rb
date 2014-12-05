@@ -25,7 +25,9 @@ class PartsController < ApplicationController
   end
 
   def create_motherboard
-    @motherboard = Motherboard.new(motherboard_params)
+    @motherboard = Motherboard.create(motherboard_params)
+    @motherboard.creator ||= current_user.id
+
     if @motherboard.save
       flash[:success] = "Your motherboard has been created!"
       redirect_to parts_add_path
@@ -35,7 +37,8 @@ class PartsController < ApplicationController
   end
 
   def create_cpu
-    @cpu = Cpu.new(cpu_params)
+    @cpu = Cpu.create(cpu_params)
+    @cpu.creator ||= current_user.id
     if @cpu.save
       flash[:success] = "Your CPU has been created!"
       redirect_to parts_add_path
@@ -45,7 +48,8 @@ class PartsController < ApplicationController
   end
 
   def create_gpu
-    @gpu = Gpu.new(gpu_params)
+    @gpu = Gpu.create(gpu_params)
+    @gpu.creator ||= current_user.id
     if @gpu.save
       flash[:success] = "Your GPU has been created!"
       redirect_to parts_add_path
@@ -55,7 +59,8 @@ class PartsController < ApplicationController
   end
 
   def create_ram
-    @ram = Ram.new(ram_params)
+    @ram = Ram.create(ram_params)
+    @ram.creator ||= current_user.id
     if @ram.save
       flash[:success] = "Your RAM has been created!"
       redirect_to parts_add_path
@@ -65,7 +70,8 @@ class PartsController < ApplicationController
   end
 
   def create_hd
-    @hd = Hd.new(hd_params)
+    @hd = Hd.create(hd_params)
+    @hd.creator ||= current_user.id
     if @hd.save
       flash[:success] = "Your HD has been created!"
       redirect_to parts_add_path
@@ -75,7 +81,8 @@ class PartsController < ApplicationController
   end
 
   def create_power
-    @power = Power.new(power_params)
+    @power = Power.create(power_params)
+    @power.creator ||= current_user.id
     if @power.save
       flash[:success] = "Your power supply has been created!"
       redirect_to parts_add_path
@@ -87,7 +94,7 @@ class PartsController < ApplicationController
   private
 
   def motherboard_params
-    params.require(:motherboard).permit(:price, :cpu_compad, :gpu_compad, :ram_compad, :hd_compad, :watts, :name, :creator)
+    params.require(:motherboard).permit(:price, :cpu_compad, :gpu_compad, :ram_compad, :hd_compad, :watts, :name)
   end
 
   def cpu_params

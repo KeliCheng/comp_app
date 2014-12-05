@@ -13,7 +13,7 @@ Motherboard.create(name:"Foxconn H1CC-UP",  price:29.00, cpu_compad:"Intel", gpu
 Motherboard.create(name:"GIGABYTE GA-F4TH0M",  price:52.00, cpu_compad:"AMD", gpu_compad:"PCI 3.0", ram_compad:"240-pin DDR3", hd_compad:"SAS 6.0 Gb/s", watts:32, creator:0)
 Motherboard.create(name:"ASUS Q89M0ll10N",  price:1299.00, cpu_compad:"Intel", gpu_compad:"PCI 3.0 x16", ram_compad:"288-pin DDR4", hd_compad:"SATA 6.0 Gb/s", watts:80, creator:0)
 Motherboard.create(name:"ASUS Crosshair X Formula-Z",  price:186.00, cpu_compad:"AMD", gpu_compad:"PCI 3.0", ram_compad:"288-pin DDR4", hd_compad:"SATA 3.0 Gb/s", watts:45, creator:0)
-Motherboard.create(name:"ECS B960-MTX",  price:74.00, cpu_compad:"AMD", gpu_compad:"PCI 3.0 x16", ram_compad:"240-pin DDR2", hd_compad:"SATA 6.0 Gb/s", watts:34, creator:0)
+Motherboard.create(name:"ECS B960-MTX",  price:7400, cpu_compad:"AMD", gpu_compad:"PCI 3.0 x16", ram_compad:"240-pin DDR2", hd_compad:"SATA 6.0 Gb/s", watts:34, creator:0)
 Motherboard.create(name:"ASRock ZZT09 EX-9",  price:239.00, cpu_compad:"Intel", gpu_compad:"PCI 2.0 x16", ram_compad:"240-pin DDR2", hd_compad:"SAS 6.0 Gb/s", watts:62, creator:0)
 Motherboard.create(name:"MSI AM4 P0T4T0ECS B960-MTX",  price:30.00, cpu_compad:"AMD", gpu_compad:"PCI 2.0 x16", ram_compad:"240-pin DDR3", hd_compad:"SATA 3.0 Gb/s", watts:27, creator:0)
 Motherboard.create(name:"ASUS MAXIMUS VII R7",  price:209.00, cpu_compad:"Intel", gpu_compad:"PCI 3.0", ram_compad:"240-pin DDR3", hd_compad:"SATA 6.0 Gb/s", watts:58, creator:0)
