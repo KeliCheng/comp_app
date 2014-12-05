@@ -25,7 +25,18 @@ CompApp::Application.routes.draw do
   get "component_pages/hd"
   get "component_pages/power"
   get "parts/add"
-  get "parts/edit"
+  get "parts/add_motherboard"
+  post "parts/add_motherboard" => 'parts#create_motherboard'
+  get "parts/add_cpu"
+  post "parts/add_cpu" => 'parts#create_cpu'
+  get "parts/add_gpu"
+  post "parts/add_gpu" => 'parts#create_gpu'
+  get "parts/add_ram"
+  post "parts/add_ram" => 'parts#create_ram'
+  get "parts/add_hd"
+  post "parts/add_hd" => 'parts#create_hd'
+  get "parts/add_power"
+  post "parts/add_power" => 'parts#create_power'
   get "static_pages/home"
   get "static_pages/help"
   root "static_pages#home" #added this route to set the new home to static_pages#home

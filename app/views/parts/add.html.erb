@@ -1,1 +1,22 @@
 <% provide(:title, 'Add A Part') %>
+
+<center><h1>Select Type of Part to Add</h1></center>
+
+<div class="center jumbotron">
+    <center>
+        <%= link_to "Motherboard", parts_add_motherboard_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "CPU", parts_add_cpu_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "GPU", parts_add_gpu_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "RAM", parts_add_ram_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "HD", parts_add_hd_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "Power Supply", parts_add_power_path, class: "btn btn-large btn-primary" %>
+
+    </center>
+    <br>
+    <br>
+    <center>
+        <%= link_to static_pages_home_path, class: "btn btn-lg btn-primary" do %>
+        <span class="glyphicon glyphicon-home"></span> Home
+        <% end %>
+    </center>
+</div>

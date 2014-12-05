@@ -1,0 +1,50 @@
+<% provide(:title, 'Add A Motherboard') %>
+
+<center><h1>Add A Motherboard</h1></center>
+
+<div class="row center jumbotron" >
+  <div class="col-md-4 col-md-offset-4">
+
+		<%= form_for :motherboard do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control',:placeholder => "Name" %>
+
+		<%= f.label :price %>
+		<%= f.text_field :price, class: 'form-control',:placeholder => "0" %>
+
+		<%= f.label :cpu_compad, "CPU Compatability" %>
+		<%= f.radio_button :cpu_compad, "AMD", class: 'form-control' %>	<center><%= label_tag :cpu_compad_amd, "AMD" %></center>
+		<%= f.radio_button :cpu_compad, "Intel", class: 'form-control' %> <center><%= label_tag :cpu_compad_intel, "Intel" %></center>
+
+		<%= f.label :gpu_compad, "GPU Compatability" %>
+		<%= f.radio_button :gpu_compad, "PCI 3.0", class: 'form-control' %>	<center><%= label_tag :gpu_compad_pci_3, "PCI 3.0" %></center>
+		<%= f.radio_button :gpu_compad, "PCI 3.0 x16", class: 'form-control' %>	<center><%= label_tag :gpu_compad_pci_3_16, "PCI 3.0 x16" %></center>
+		<%= f.radio_button :gpu_compad, "PCI 2.0 x16", class: 'form-control' %>	<center><%= label_tag :gpu_compad_pci_2_16, "PCI 2.0 x16" %></center>
+
+		<%= f.label :ram_compad, "RAM Compatability" %>
+		<%= f.radio_button :ram_compad, "288-pin DDR4", class: 'form-control' %> <center><%= label_tag :ram_compad_288_DDR4, "288-pin DDR4" %></center>
+		<%= f.radio_button :ram_compad, "240-pin DDR3", class: 'form-control' %> <center><%= label_tag :ram_compad_240_DDR3, "240-pin DDR3" %></center>
+		<%= f.radio_button :ram_compad, "240-pin DDR2", class: 'form-control' %> <center><%= label_tag :ram_compad_240_DDR2, "240-pin DDR2" %></center>
+
+		<%= f.label :hd_compad, "HD Compatability" %>
+		<%= f.radio_button :hd_compad, "SATA 6.0 Gb/s", class: 'form-control' %> <center><%= label_tag :hd_compad_SATA_6, "SATA 6.0 Gb/s" %></center>
+		<%= f.radio_button :hd_compad, "SATA 3.0 Gb/s", class: 'form-control' %> <center><%= label_tag :hd_compad_SATA_3, "SATA 3.0 Gb/s" %></center>
+		<%= f.radio_button :hd_compad, "SAS 6.0 Gb/s", class: 'form-control' %> <center><%= label_tag :hd_compad_SAS_6, "SAS 6.0 Gb/s" %></center>
+
+		<%= f.label :watts %>
+		<%= f.text_field :watts, class: 'form-control',:placeholder => "0" %>
+
+		<br/>
+		<br/>
+		<center>
+			<div class="col-md-6 col-md-offset-1">
+				<%= f.submit "Create Motherboard", class: "btn btn-lg btn-success" %>
+				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
+				<% end %>
+			</div>
+		</center>
+    <% end %>
+  </div>
+</div>
