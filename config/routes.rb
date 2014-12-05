@@ -1,4 +1,9 @@
 CompApp::Application.routes.draw do
+  get "computers/new"
+  get "computers/current"
+  get "computers/rename"
+  get "computers/summary"
+  get "computers/publish"
 
   resources :users
   resources :computers
@@ -6,11 +11,7 @@ CompApp::Application.routes.draw do
   get "similar_computers/similar_price"
   get "similar_computers/similar_components"
 
-  get "computers/new"
-  get "computers/current"
-  get "computers/rename"
-  get "computers/summary"
-  get "computers/publish"
+
   get "computers/delete_mobo"
   get "computers/delete_cpu"
   get "computers/delete_gpu"

@@ -30,7 +30,7 @@
         <tr>
           <td>
           	<%if current_user.current_comp != f.id%>
-          		<%= link_to "Make Current", computers_current_path(f.id)%>
+          		<%= link_to "Make Current", computers_current_path(id:f.id)%>
           	<%end%>
           </td>
           <td><%= f.id %></td>

@@ -1,6 +1,9 @@
 class ComputersController < ApplicationController
   # before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
 
+  def rename
+    @computer = Computer.find_by(id: current_user.current_comp)
+  end
 
   def summary
     @computer = Computer.find_by(id: current_user.current_comp)
@@ -17,11 +20,10 @@ class ComputersController < ApplicationController
 
   def current
     if logged_in?
-      @user = current_user
-      @computer = Computer.find(params[:id])
-      if @computer.user_id == @user.id
-        @user.current_comp = @computer.id
-        @user.save
+      @computer = Computer.find_by_id(params[:id])
+      if @computer.user_id == current_user.id
+        current_user.current_comp = @computer.id
+        current_user.save(validate: false)
         redirect_to root_url
         flash[:success] = "Changed your current computer!"
       else
@@ -36,10 +38,10 @@ class ComputersController < ApplicationController
 
   def new
     if logged_in?
-     @user = current_user
-  	 @computer = Computer.create(user_id:current_user.id, price:0, hd_id:1, motherboard_id:1, ram_id:1,gpu_id:1,power_id:1,cpu_id:1, name:"default")
-     @user.current_comp = @computer.id
-     @user.save
+  	 @computer = Computer.new(user_id:current_user.id, price:0, hd_id:1, motherboard_id:1, ram_id:1,gpu_id:1,power_id:1,cpu_id:1, name:"default")
+     @computer.save
+     current_user.current_comp = @computer.id
+     current_user.save(validate: false)
      redirect_to component_pages_motherboard_path
     else
       redirect_to root_url
