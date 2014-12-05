@@ -1,0 +1,39 @@
+<% provide(:title, 'Add A GPU') %>
+
+<center><h1>Add A GPU</h1></center>
+
+<div class="row center jumbotron" >
+  <div class="col-md-4 col-md-offset-4">
+
+		<%= form_for :gpu do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control',:placeholder => "Name" %>
+
+		<%= f.label :price %>
+		<%= f.text_field :price, class: 'form-control',:placeholder => "0" %>
+
+		<%= f.label :vram %>
+		<%= f.text_field :vram, class: 'form-control',:placeholder => "0" %>
+
+		<%= f.label :mb_compad, "Motherboard Compatability" %>
+		<%= f.radio_button :mb_compad, "PCI 3.0", class: 'form-control' %>	<center><%= label_tag :mb_compad_pci_3, "PCI 3.0" %></center>
+		<%= f.radio_button :mb_compad, "PCI 3.0 x16", class: 'form-control' %>	<center><%= label_tag :mb_compad_pci_3_16, "PCI 3.0 x16" %></center>
+		<%= f.radio_button :mb_compad, "PCI 2.0 x16", class: 'form-control' %>	<center><%= label_tag :mb_compad_pci_2_16, "PCI 2.0 x16" %></center>
+
+		<%= f.label :watts %>
+		<%= f.text_field :watts, class: 'form-control',:placeholder => "0" %>
+
+		<br/>
+		<br/>
+		<center>
+			<div class="col-md-6 col-md-offset-1">
+				<%= f.submit "Create GPU", class: "btn btn-lg btn-success" %>
+				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
+				<% end %>
+			</div>
+		</center>
+    <% end %>
+  </div>
+</div>
