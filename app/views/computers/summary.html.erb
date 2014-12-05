@@ -5,13 +5,13 @@
               function turnRed() {
                   if(@motherboard.id = 1) {
                       document.getElementById("mobo").style.visibility="hidden";
-                      document.getElementById("cont1").style.visibility="hidden"; 
+                      document.getElementById("cont1").style.visibility="hidden";
                   }
               }
           </script>
       </head>
   <center>
-    <body>   
+    <body>
     <p><center>Computer ID: <%= @computer.id %><br>
       Name: <%= @computer.name %><br>
       Status: <%= @computer.status %></center></p>
@@ -22,7 +22,7 @@
           <th><center>Description</center></th>
           <th> </th>
         </tr>
-         
+
           <div id="mobo" onload='turnRed()'>
                <tr>
             <td>Motherboard</td>
@@ -35,7 +35,7 @@
               <%= @motherboard.watts %> Watts<br>
               $<%= @motherboard.price %></p></td>
                <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_motherboard_path%></td>
-               <td class="btn btn-primary btn-xs disabled"><%= link_to "Delete", computers_delete_mobo_path, data: {confirm: "Are you sure to delete?"}%></td>  
+               <td class="btn btn-primary btn-xs disabled"><%= link_to "Delete", computers_delete_mobo_path, data: {confirm: "Are you sure to delete?"}%></td>
             </tr>
           </div>
 
@@ -50,7 +50,7 @@
               $<%= @cpu.price %></p></td>
               <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_cpu_path%></td>
                <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_cpu_path, data: {confirm: "Are you sure to delete?"}%></td>
-               
+
           </tr>
           <tr>
             <td>RAM</td>
@@ -62,7 +62,7 @@
               $<%= @ram.price %></p></td>
               <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_ram_path%></td>
                <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_ram_path, data: {confirm: "Are you sure to delete?"}%></td>
-               
+
           </tr>
           <tr>
             <td>GPU</td>
@@ -74,7 +74,7 @@
               $<%= @gpu.price %></p></td>
               <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_gpu_path%></td>
                <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_gpu_path, data: {confirm: "Are you sure to delete?"}%></td>
-               
+
           </tr>
           <tr>
             <td>HD</td>
@@ -142,7 +142,7 @@
 
 
   <div>
-    <center> 
+    <center>
       <%= link_to static_pages_home_path, class: "btn btn-lg btn-primary" do %>
       <span class="glyphicon glyphicon-home"></span> Home
       <% end %>

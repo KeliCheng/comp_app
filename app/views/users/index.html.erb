@@ -1,40 +1,92 @@
 
 <center><h1>All users</h1>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:25%">
-  <% @users.each do |user| %>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#<%= user.name %>" aria-expanded="true" aria-controls="<%= user.name %>">
-          <center> <%= user.name %> </center>
-        </h4>
-      </div>
-    </a>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:25%">
+    <% @users.each do |user| %>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#<%= user.name.gsub(/\s+/, "") %>" aria-expanded="true" aria-controls="<%= user.name.gsub(/\s+/, "") %>">
+            <center> <%= user.name %> </center>
+          </h4>
+        </div>
+      </a>
+      <div id="<%= user.name.gsub(/\s+/, "") %>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="<%= user.name.gsub(/\s+/, "") %>">
+        <div class="panel-body">
+          <% Computer.where(user_id:user.id).each do |f| %>
+          <% if current_user %>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#<%= f.id %>">
+            Computer:<%= f.id %>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="<%= f.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><%= user.name %> Computer:<%= f.id %></h4>
+                </div>
+                <div class="modal-body">
+                  <table class="table table-stripe ">
+                    <tbody>
+                      <tr class="success">
+                        <td>Component</td>
+                        <td>Name</td>
+                        <td>Price</td>
+                      </tr>
+                      <tr class="active">
+                        <td>Motherboard</td>
+                        <td><%= @motherboard.find(f.motherboard_id).name %></td>
+                        <td>$<%= @motherboard.find(f.motherboard_id).price %></td>
+                      </tr>
+                      <tr class="active">
+                        <td>CPU</td>
+                        <td><%= @cpu.find(f.cpu_id).name %></td>
+                        <td>$<%= @cpu.find(f.cpu_id).price %></td>
+                      </tr>
+                      <tr class="active">
+                        <td>RAM</td>
+                        <td><%= @ram.find(f.ram_id).name %></td>
+                        <td>$<%= @ram.find(f.ram_id).price %></td>
+                      </tr>
 
-    <div id="<%= user.name %>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="<%= user.name %>">
-      <div class="panel-body">
-        <% Computer.where(user_id:user.id).each do |f| %>
-            <% if current_user %>
-
-
-
-            <table class="table table-striped">
-              <tr class="active">
-                <th><center>Computer:<%= f.id %></center>
-                </th>
-              </tr>
-              <tbody>
-                <tr class="active">
-                  <td><center><%= rating_for f, "user_rating", disable_after_rate: true, imdb_avg: true %></td></center>
-                </tr>
-              </tbody>
-            </table>
-            <% end %>
-        <% end %>
+                      <tr class="active">
+                        <td>GPU</td>
+                        <td><%= @gpu.find(f.gpu_id).name %></td>
+                        <td>$<%= @gpu.find(f.gpu_id).price %></td>
+                      </tr>
+                      <tr class="active">
+                        <td>HD</td>
+                        <td><%= @hd.find(f.hd_id).name %></td>
+                        <td>$<%= @hd.find(f.hd_id).price %></td>
+                      </tr>
+                      <tr class="active">
+                        <td>Power</td>
+                        <td><%= @power.find(f.power_id).name %></td>
+                        <td>$<%= @power.find(f.power_id).price %></td>
+                      </tr>
+                      <tr class="active">
+                        <td></td>
+                        <td><b>Total</b></td>
+                        <td class="active"><b>$<%= f.price %><b></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  Rating:<%= rating_for f, "user_rating",:cancel_hint => "Cancel my vote!" %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </center>

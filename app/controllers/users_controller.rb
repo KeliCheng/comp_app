@@ -11,6 +11,12 @@ class UsersController < ApplicationController
 	def index
 		@users = User.all
 		@computers = Computer.all
+		@motherboard = Motherboard.all
+		@cpu = Cpu.all
+		@ram = Ram.all
+		@gpu = Gpu.all
+		@hd = Hd.all
+		@power = Power.all
   end
 
   def create
