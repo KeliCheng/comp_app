@@ -7,6 +7,5 @@ class CreateComputers < ActiveRecord::Migration
 
       t.timestamps
     end
-    # add_index :computers, [:user_id, :created_at]
-  end
+   end
 end
