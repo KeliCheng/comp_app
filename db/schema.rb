@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20141205000834) do
     t.integer  "cpu_id"
     t.integer  "power_id"
   end
-  
+
   create_table "cpus", force: true do |t|
     t.decimal  "price"
     t.string   "speed"
