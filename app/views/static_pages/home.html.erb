@@ -10,16 +10,16 @@
 				<%= link_to logout_path, method: "delete", class: "btn btn-lg btn-primary" do %>
 					<span class="glyphicon glyphicon-remove"></span> Log out
 				<% end %>
-				<br>
-				<br>
-
+				
 <!-- <div>
 				<%= link_to "Start", component_pages_motherboard_path,
 																			class: "btn btn-large btn-success" %>
 </div> -->
 			</center>
 		</div>
-			  <table class="table", style="width:80%;float:right;vertical-align:top">
+        <div class="jumbotron">
+        <center><h3>Your Computers</h3><center>
+			  <table class="table", style="width:80%;vertical-align:top">
       <tr class="active">
         <th>Switch</th>
         <th><center>ID</center></th>
@@ -59,6 +59,129 @@
             </td>
         </tr>
       </table>
+      </div>
+
+      <div class="jumbotron">
+        <center><h3>Your Parts</h3></center>
+        <br>
+        <center><h5>Motherboards</h5></center>
+        <table class="table", style="width:80%;vertical-align:top">
+          <tr class="active">
+            <th><center>Name</center></th>
+            <th><center>CPU Type</center></th>
+            <th><center>GPU Type</center></th>
+            <th><center>RAM Type</center></th>
+            <th><center>HD Type</center></th>
+            <th><center>Watts</center></th>
+            <th><center>Price</center></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr> 
+        </table>
+
+        <center><h5>CPUs</h5></center>
+        <table class="table", style="width:80%;vertical-align:top">
+          </thead>
+          <tr class="active">
+            <th><center>Name</center></th>
+            <th><center>Type</center></th>
+            <th><center>Cores</center></th>
+            <th><center>Speed</center></th>
+            <th><center>Watts</center></th>
+            <th><center>Price</center></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr> 
+        </table> 
+
+
+        <center><h5>GPUs</h5></center>
+        <table class="table", style="width:80%;vertical-align:top">
+          <tr class="active">
+            <th><center>Name</center></th>
+            <th><center>Type</center></th>
+            <th><center>VRAM</center></th>
+            <th><center>Watts</center></th>
+            <th><center>Price</center></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr> 
+        </table> 
+
+        <center><h5>RAM</h5></center>
+        <table class="table", style="width:80%;vertical-align:top">
+          <tr class="active">
+            <th><center>Name</center></th>
+            <th><center>Type</center></th>
+            <th><center>Size</center></th>
+            <th><center>Watts</center></th>
+            <th><center>Price</center></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr> 
+        </table> 
+
+        <center><h5>HDs</h5></center>
+        <table class="table", style="width:80%;vertical-align:top">
+          <tr class="active">
+            <th><center>Name</center></th>
+            <th><center>Type</center></th>
+            <th><center>Size</center></th>
+            <th><center>Watts</center></th>
+            <th><center>Price</center></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table> 
+
+        <center><h5>Power Supplies</h5></center>
+        <table class="table", style="width:80%;vertical-align:top">
+          <tr class="active">
+            <th><center>Name</center></th>
+            <th><center>Watts</center></th>
+            <th><center>Price</center></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table> 
+
+      <br>
+      <div>
+        <%= link_to "Create a Part", parts_add_path, class: "btn btn-large btn-success" %>
+      </div>
+    </div>
+
 <% else %>
 <center><%= image_tag("logo.png") %></center><br>
 	<div class="center jumbotron">
