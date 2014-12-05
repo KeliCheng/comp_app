@@ -1,7 +1,7 @@
 class ComponentPagesController < ApplicationController
 
   def init_prices
-    @computer = Computer.find_by(user_id: current_user.id)
+    @computer = Computer.find_by(id: current_user.current_comp)
     @moboprice = Motherboard.find_by(id: @computer.motherboard_id)
     @cpuprice = Cpu.find_by(id: @computer.cpu_id)
     @ramprice = Ram.find_by(id: @computer.ram_id)

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	ratyrate_rater
 	attr_accessor :remember_token #Used for remembering sessions
-	  attr_accessible :name, :password, :password_confirmation, :email
+	  attr_accessible :name, :password, :password_confirmation, :email, :current_comp
 		validates :password_confirmation, :presence => true
 		validates :name, presence: true, uniqueness: true
 		validates :email, presence: true, uniqueness: true

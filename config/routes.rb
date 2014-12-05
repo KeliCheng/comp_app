@@ -1,11 +1,18 @@
 CompApp::Application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
+  get "computers/new"
+  get "computers/current"
+  get "computers/rename"
+  get "computers/summary"
+  get "computers/publish"
+
+  resources :users
+  resources :computers
   get "similar_computers/menu"
   get "similar_computers/similar_price"
   get "similar_computers/similar_components"
 
-  get "computers/summary"
-  get "computers/publish"
+
   get "computers/delete_mobo"
   get "computers/delete_cpu"
   get "computers/delete_gpu"
@@ -16,8 +23,6 @@ CompApp::Application.routes.draw do
   get "component_pages/ram"
   get "component_pages/motherboard"
 
-  resources :users
-  resources :computers
 
   get "users/edit"
   get "users/new"
