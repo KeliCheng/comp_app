@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 20141205000834) do
     t.integer  "power_id"
   end
 
-  add_index "computers", ["name"], name: "index_computers_on_name", unique: true
-
   create_table "cpus", force: true do |t|
     t.decimal  "price"
     t.string   "speed"
