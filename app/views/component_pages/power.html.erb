@@ -13,6 +13,7 @@
       <tr class="active">
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Creator</center></th>
         <th><center>Name</center></th>
         <th><center>Watts</center></th>
         <th><center>Price</center></th>
@@ -23,6 +24,11 @@
         <tr>
           <td><%=power_form.radio_button :power_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <% if f.creator != 0 %>
+            <td><%= User.find_by(id: f.creator).name %></td>
+          <% else %>
+            <td>System</td>
+          <% end %>
           <td><%= f.name %></td>
           <td><%= f.watts %> Watts</td>
           <td>$<%= f.price %></td>

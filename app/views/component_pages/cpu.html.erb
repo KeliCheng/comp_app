@@ -15,6 +15,7 @@
       <tr class="active">
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Creator</center></th>
         <th><center>Name</center></th>
         <th><center>Type</center></th>
         <th><center>Cores</center></th>
@@ -28,6 +29,11 @@
         <tr>
           <td><%=cpu_form.radio_button :cpu_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <% if f.creator != 0 %>
+            <td><%= User.find_by(id: f.creator).name %></td>
+          <% else %>
+            <td>System</td>
+          <% end %>
           <td><%= f.name %></td>
           <td><%= f.mb_compad %></td>
           <td><%= f.cores %></td>

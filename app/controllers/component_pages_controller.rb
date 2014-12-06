@@ -16,7 +16,8 @@ class ComponentPagesController < ApplicationController
 
   def motherboard
     init_prices
-    @mother = Motherboard.all   #do not display id = 1 
+    @mother = Motherboard.all   #do not display id = 1
+    @user = User.all
   end
 
   def cpu

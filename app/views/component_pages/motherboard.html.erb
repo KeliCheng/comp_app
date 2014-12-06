@@ -14,6 +14,7 @@
       <tr class="active">
         <th></th>
         <th><center>ID</center></th>
+        <th><center>Creator</center></th>
         <th><center>Name</center></th>
         <th><center>CPU Type</center></th>
         <th><center>GPU Type</center></th>
@@ -30,6 +31,11 @@
     <tr>
           <td><%=mobo_form.radio_button :motherboard_id, value = f.id%></td>
           <td><%= f.id %></td>
+          <% if f.creator != 0 %>
+            <td><%= User.find_by(id: f.creator).name %></td>
+          <% else %>
+            <td>System</td>
+          <% end %>
           <td><%= f.name %></td>
           <td><%= f.cpu_compad %></td>
           <td><%= f.gpu_compad %></td>
