@@ -6,6 +6,14 @@
   <li><%= link_to "Summary", computers_summary_path%></li>
   <li class="active">PowerSupply</li>
 </ul>
+
+<div>
+  <div class="alert alert-dismissable alert-info">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    This computer needs a powersupply with at least <strong><%= @powerwatts.to_int %></strong> watts so that it can power all of its parts.
+  </div>
+</div>
+
 <center>
   <table style="width:100%">
 <%= render 'component_pages/price' %>

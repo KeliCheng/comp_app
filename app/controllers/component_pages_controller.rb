@@ -23,24 +23,28 @@ class ComponentPagesController < ApplicationController
   def cpu
     init_prices
     #@cpu = Cpu.all
+    @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @cpu = Cpu.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).cpu_compad) #do not display id = 1 
   end
 
   def ram
     init_prices
     #@ram = Ram.all
+    @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @ram = Ram.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).ram_compad)  #do not display id = 1 
   end
 
   def gpu
     init_prices
     #@gpu = Gpu.all
+    @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @gpu = Gpu.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).gpu_compad)  #do not display id = 1 
   end
 
   def hd
     init_prices
     #@hd = Hd.all
+    @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @hd = Hd.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).hd_compad)  #do not display id = 1 
   end
 

@@ -7,6 +7,14 @@
   <li><%= link_to "Summary", computers_summary_path%></li>
   <li class="active">GPU</li>
 </ul>
+
+<div>
+  <div class="alert alert-dismissable alert-info">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    This computer's <a href="/component_pages/motherboard" class="alert-link">motherboard</a> is only compatible with GPUs that have a <strong><%= @motherboard.gpu_compad%></strong> interface.
+  </div>
+</div>
+
 <center>
   <table style="width:100%">
 <%= render 'component_pages/price' %>

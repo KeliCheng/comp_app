@@ -7,6 +7,14 @@
   <li><%= link_to "Summary", computers_summary_path%></li>
   <li class="active">Motherboard</li>
 </ul>
+
+<div>
+  <div class="alert alert-dismissable alert-info">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    Motherboards are only compatable with <strong>certain types of parts</strong>. What motherboard you choose will determine what types of parts will be available for you to choose from when building the rest of your computer. <strong>Choose wisely!</strong>
+  </div>
+</div>
+
 <center>
   <table style="width:100%">
     <%= render 'component_pages/price' %>
@@ -16,7 +24,7 @@
         <th><center>ID</center></th>
         <th><center>Creator</center></th>
         <th><center>Name</center></th>
-        <th><center>CPU Type</center></th>
+        <th title="TEST"><center>CPU Type</center></th>
         <th><center>GPU Type</center></th>
         <th><center>RAM Type</center></th>
         <th><center>HD Type</center></th>

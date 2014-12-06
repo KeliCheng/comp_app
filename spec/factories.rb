@@ -15,4 +15,5 @@ FactoryGirl.define do
     price 500
     user
   end
+
 end
