@@ -7,7 +7,7 @@ class ComputersController < ApplicationController
 
   def summary
     @computer = Computer.find_by(id: current_user.current_comp)
-    # if motherboard_id == nil 
+    # if motherboard_id == nil
 
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @cpu = Cpu.find_by(id: @computer.cpu_id)
@@ -15,7 +15,7 @@ class ComputersController < ApplicationController
     @gpu = Gpu.find_by(id: @computer.gpu_id)
     @hd = Hd.find_by(id: @computer.hd_id)
     @power = Power.find_by(id: @computer.power_id)
-    @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1 
+    @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1
   end
 
   def current
@@ -61,7 +61,7 @@ class ComputersController < ApplicationController
     end
   end
 
-  def publish #check motherboard and power supply when trying to publish/share 
+  def publish #check motherboard and power supply when trying to publish/share
     @computer = Computer.find_by(id: current_user.current_comp)
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     @cpu = Cpu.find_by(id: @computer.cpu_id)
@@ -69,7 +69,7 @@ class ComputersController < ApplicationController
     @gpu = Gpu.find_by(id: @computer.gpu_id)
     @hd = Hd.find_by(id: @computer.hd_id)
     @power = Power.find_by(id: @computer.power_id)
-    @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1 
+    @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1
 
     if @motherboard.cpu_compad != @cpu.mb_compad
       flash[:danger] = 'Motherboard and CPU do not match.'
@@ -86,11 +86,11 @@ class ComputersController < ApplicationController
     elsif @power.watts < @sum_watts
       flash[:danger] = 'Power Supply cannot support.'
       redirect_to :back
-    else 
-      #publish or share this computer here 
-    end 
+    else
+      #publish or share this computer here
+    end
 
-  end 
+  end
 
 
 
@@ -192,7 +192,7 @@ class ComputersController < ApplicationController
   	end
   end
 
-  
+
 
   private
 

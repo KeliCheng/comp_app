@@ -1,24 +1,19 @@
-<% if logged_in? %>
-<center><%= image_tag("logo.png") %></center><br>
+<body data-no-turbolink>
+<center><% if logged_in? %>
+<%= link_to edit_user_path(current_user), class: "btn btn-lg btn-primary" do %>
+<span class="glyphicon glyphicon-wrench"></span> Edit User Info
+<% end %>
+<%= link_to users_path, class: "btn btn-default btn-lg" do %>
+<span class="glyphicon glyphicon-globe"></span> View All Users
+<% end %>
+<%= link_to logout_path, method: "delete", class: "btn btn-lg btn-primary" do %>
+<span class="glyphicon glyphicon-remove"></span> Log out
+<% end %></center>
+<center><%= image_tag("logo.png") %></center>
 	<center><h3>User: <%= current_user.name %> </h3></center>
 	<center><h3>Email: <%= current_user.email %></h3><center>
-		<div class="center jumbotron">
-			<center>
-				 <%= link_to edit_user_path(current_user), class: "btn btn-lg btn-primary" do %>
-					<span class="glyphicon glyphicon-wrench"></span> Edit User Info
-				<% end %>
-				<%= link_to logout_path, method: "delete", class: "btn btn-lg btn-primary" do %>
-					<span class="glyphicon glyphicon-remove"></span> Log out
-				<% end %>
-				
-<!-- <div>
-				<%= link_to "Start", component_pages_motherboard_path,
-																			class: "btn btn-large btn-success" %>
-</div> -->
-			</center>
-		</div>
     <center><h3>Your Computers</h3><center>
-        <div class="jumbotron">
+        <div class=" center jumbotron">
 			  <table class="table", style="width:80%;vertical-align:top">
       <tr class="active">
         <th>Switch</th>
@@ -84,7 +79,7 @@
               <td><%= f.hd_compad %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
-            </tr> 
+            </tr>
           <% end %>
         </table>
 
@@ -107,9 +102,9 @@
               <td><%= f.speed %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
-            </tr> 
-          <% end %> 
-        </table> 
+            </tr>
+          <% end %>
+        </table>
 
 
         <center><h5>GPUs</h5></center>
@@ -128,9 +123,9 @@
               <td><%= f.vram %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
-            </tr> 
-          <% end %> 
-        </table> 
+            </tr>
+          <% end %>
+        </table>
 
         <center><h5>RAM</h5></center>
         <table class="table", style="width:80%;vertical-align:top">
@@ -148,9 +143,9 @@
               <td><%= f.size %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
-            </tr> 
-          <% end %> 
-        </table> 
+            </tr>
+          <% end %>
+        </table>
 
         <center><h5>HDs</h5></center>
         <table class="table", style="width:80%;vertical-align:top">
@@ -168,9 +163,9 @@
               <td><%= f.size %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
-            </tr> 
-          <% end %> 
-        </table> 
+            </tr>
+          <% end %>
+        </table>
 
         <center><h5>Power Supplies</h5></center>
         <table class="table", style="width:80%;vertical-align:top">
@@ -184,9 +179,9 @@
               <td><%= f.name %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
-            </tr> 
-          <% end %> 
-        </table> 
+            </tr>
+          <% end %>
+        </table>
 
       <br>
       <div>
@@ -210,3 +205,4 @@
 		</center>
 	</div>
 <% end %>
+</body>
