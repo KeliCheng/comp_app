@@ -11,10 +11,10 @@
 		<%= f.text_field :name, class: 'form-control',:placeholder => "Name" %>
 
 		<%= f.label :price %>
-		<%= f.text_field :price, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :price, class: 'form-control',:placeholder => "0" %>
 
 		<%= f.label :size %>
-		<%= f.text_field :size, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :size, class: 'form-control',:placeholder => "0" %>
 
 		<%= f.label :mb_compad, "Motherboard Compatability" %>
 		<%= f.radio_button :mb_compad, "288-pin DDR4", class: 'form-control' %>	<center><%= label_tag :mb_compad_288_DDR4, "288-pin DDR4" %></center>
@@ -22,7 +22,7 @@
 		<%= f.radio_button :mb_compad, "240-pin DDR2", class: 'form-control' %>	<center><%= label_tag :mb_compad_pci_240_DDR3, "240-pin DDR2" %></center>
 
 		<%= f.label :watts %>
-		<%= f.text_field :watts, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :watts, class: 'form-control',:placeholder => "0" %>
 
 		<br/>
 		<br/>

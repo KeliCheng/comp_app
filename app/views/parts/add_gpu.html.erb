@@ -11,7 +11,7 @@
 		<%= f.text_field :name, class: 'form-control',:placeholder => "Name" %>
 
 		<%= f.label :price %>
-		<%= f.text_field :price, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :price, class: 'form-control',:placeholder => "0" %>
 
 		<%= f.label :vram %>
 		<%= f.text_field :vram, class: 'form-control',:placeholder => "0" %>
@@ -22,7 +22,7 @@
 		<%= f.radio_button :mb_compad, "PCI 2.0 x16", class: 'form-control' %>	<center><%= label_tag :mb_compad_pci_2_16, "PCI 2.0 x16" %></center>
 
 		<%= f.label :watts %>
-		<%= f.text_field :watts, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :watts, class: 'form-control',:placeholder => "0" %>
 
 		<br/>
 		<br/>

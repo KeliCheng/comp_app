@@ -11,19 +11,20 @@
 		<%= f.text_field :name, class: 'form-control',:placeholder => "Name" %>
 
 		<%= f.label :price %>
-		<%= f.text_field :price, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :price, class: 'form-control',:placeholder => "0" %>
 
 		<%= f.label :watts %>
-		<%= f.text_field :watts, class: 'form-control',:placeholder => "0" %>
+		<%= f.number_field :watts, class: 'form-control',:placeholder => "0" %>
 
 		<br/>
 		<br/>
-		<center>
 			<div class="col-md-6 col-md-offset-1">
+			<center>
 				<%= f.submit "Create Power Supply", class: "btn btn-lg btn-success" %>
 				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
 				<% end %>
+			</center>
 			</div>
 		</center>
     <% end %>
