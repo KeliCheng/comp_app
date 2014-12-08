@@ -29,7 +29,6 @@
 
 <center>
 	<h3>Your Blacklisted Parts</h3>
-	
 	<br>
     	<center><h5>Motherboards</h5></center>
         <table class="table", style="width:80%;vertical-align:top">
@@ -51,6 +50,7 @@
               <td><%= f.hd_compad %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
+              <td class="btn btn-primary btn-xs"><%= link_to "Delete", blacklists_delete_mobo_path(:moboid => f.id) %></td>
             </tr>
           <% end %>
         </table>
@@ -74,6 +74,7 @@
               <td><%= f.speed %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
+              <td class="btn btn-primary btn-xs"><%= link_to "Delete", blacklists_delete_cpu_path(:cpuid => f.id) %></td>
             </tr>
           <% end %>
         </table>
@@ -95,6 +96,7 @@
               <td><%= f.vram %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
+              <td class="btn btn-primary btn-xs"><%= link_to "Delete", blacklists_delete_gpu_path(:gpuid => f.id) %></td>
             </tr>
           <% end %>
         </table>
@@ -115,6 +117,7 @@
               <td><%= f.size %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
+              <td class="btn btn-primary btn-xs"><%= link_to "Delete", blacklists_delete_ram_path(:ramid => f.id) %></td>
             </tr>
           <% end %>
         </table>
@@ -135,6 +138,7 @@
               <td><%= f.size %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
+              <td class="btn btn-primary btn-xs"><%= link_to "Delete", blacklists_delete_hd_path(:hdid => f.id) %></td>
             </tr>
           <% end %>
         </table>
@@ -151,6 +155,7 @@
               <td><%= f.name %></td>
               <td><%= f.watts %></td>
               <td><%= f.price %></td>
+              <td class="btn btn-primary btn-xs"><%= link_to "Delete", blacklists_delete_power_path(:powerid => f.id) %></td>
             </tr>
           <% end %>
         </table>

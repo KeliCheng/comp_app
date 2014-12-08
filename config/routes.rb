@@ -6,6 +6,12 @@ CompApp::Application.routes.draw do
   get "blacklist_pages/gpu"
   get "blacklist_pages/hd"
   get "blacklist_pages/power"
+  get "blacklists/delete_mobo"
+  get "blacklists/delete_cpu"
+  get "blacklists/delete_ram"
+  get "blacklists/delete_gpu"
+  get "blacklists/delete_hd"
+  get "blacklists/delete_power"
   post '/rate' => 'rater#create', :as => 'rate'
   get "computers/new"
   get "computers/current"
