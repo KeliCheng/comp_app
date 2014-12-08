@@ -4,7 +4,7 @@ class SimilarComputersController < ApplicationController
 
   def similar_price
   	@computer = Computer.find_by(user_id: current_user.id)
-  	@similar_computers = Computer.where(:price => (@computer.price-100)..(@computer.price+100))
+  	@similar_computers = Computer.where(:price => (@computer.price-400)..(@computer.price+400))
   end
 
   def similar_components
