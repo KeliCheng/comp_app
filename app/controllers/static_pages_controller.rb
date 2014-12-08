@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  helper_method :update_notifications
+
   def home
   	if logged_in?
   		@computers = Computer.where(user_id: current_user.id)
@@ -9,8 +11,13 @@ class StaticPagesController < ApplicationController
   		@rams = Ram.where(creator: current_user.id)
   		@hds = Hd.where(creator: current_user.id)
   		@powers = Power.where(creator: current_user.id)
+      @notifs = Notification.all
   	end
   end
 
-  
+  def update_notifications
+    @user = current_user
+    @user.notifications = @user.notifications + 1
+    @user.save(validate: false)
+  end
 end

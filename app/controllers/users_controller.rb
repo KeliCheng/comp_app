@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :logged_in_user, only: [:index, :edit, :update]
+
 	def edit
     @user = User.find(params[:id])
 	end
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.notifications = 1
     if @user.save
         #sign_in @user
         flash[:success] = "Welcome to Build a Comp!"
@@ -58,5 +60,4 @@ class UsersController < ApplicationController
 			redirect_to login_url
 		end
 	end
-
 end

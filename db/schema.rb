@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208013820) do
+ActiveRecord::Schema.define(version: 20141208034638) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -94,6 +94,12 @@ ActiveRecord::Schema.define(version: 20141208013820) do
     t.integer  "creator"
   end
 
+  create_table "notifications", force: true do |t|
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "overall_averages", force: true do |t|
     t.integer  "rateable_id"
     t.string   "rateable_type"
@@ -155,6 +161,7 @@ ActiveRecord::Schema.define(version: 20141208013820) do
     t.string   "remember_digest"
     t.string   "password_digest"
     t.integer  "current_comp"
+    t.integer  "notifications"
   end
 
 end

@@ -12,6 +12,21 @@
 <%= link_to logout_path, method: "delete", class: "btn btn-lg btn-primary" do %>
 <span class="glyphicon glyphicon-remove"></span> Log out
 <% end %></center>
+
+<% @notifs.each do |f| %>
+  <% if current_user.notifications <= f.id %>
+    <div>
+      <div class="alert alert-dismissable alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <center>
+          <%= f.body %>
+        </center>
+        <% update_notifications %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <center><%= image_tag("logo.png") %></center>
 	<center><h3>User: <%= current_user.name %> </h3></center>
 	<center><h3>Email: <%= current_user.email %></h3><center>
