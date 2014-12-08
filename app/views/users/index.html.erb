@@ -1,6 +1,5 @@
 
 <center><h1>All users</h1>
-
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:25%">
     <% @users.each do |user| %>
     <div class="panel panel-default">
@@ -73,8 +72,17 @@
                       </tr>
                     </tbody>
                   </table>
-                  Rating:<%= rating_for f, "user_rating",:cancel_hint => "Cancel my vote!" %>
+                  Rating:<%= rating_for f, "user_rating",:cancel_hint => "Cancel my vote!" %><br>
+                  <div class="form-group">
+                    <label for="textArea" class="col-lg-2 control-label">Leave a comment</label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control" rows="2" id="textArea"></textarea>
+                      <br>
+                      <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Submit</button>
+                    </div>
+                  </div>
                 </div>
+                <br><br>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
@@ -88,5 +96,11 @@
       </div>
     </div>
     <% end %>
+    <center>
+      <br><br>
+      <%= link_to static_pages_home_path, class: "btn btn-lg btn-primary" do %>
+      <span class="glyphicon glyphicon-home"></span> Return Home
+      <% end %>
+    </center>
   </div>
 </center>
