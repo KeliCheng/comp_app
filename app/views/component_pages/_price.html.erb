@@ -1,12 +1,73 @@
 <table style="width:20%;float:right;vertical-align:top">
   <tr>
-    <th><div class="panel panel-primary">
-<div class="panel-heading">
-<h3 class="panel-title">Total price</h3>
-</div>
-<div class="panel-body">
-<h2>$<%= @computer.price %></h2>
-</div>
-</div></th>
+  	<th colspan="3">
+  		<div class="panel-primary">
+  		<div class="panel-heading">
+    		<h3 class="panel-title">Price Summary</h3>
+    	</div>
+    	</div>
+    </th>
   </tr>
+  <tr>
+  	<th></th>
+  	<th>Your Price</th>
+  	<th>Average Price</th>
+  </tr>
+  <tr>
+    <td>Motherboard: </td>
+    <td>$<%= @moboprice.price %></td>
+    <td>$<%= @moboavg %></td>
+  </tr>
+  <tr>
+    <td>CPU:         </td>
+    <td>$<%= @cpuprice.price %></td>
+    <td>$<%= @cpuavg %></td>
+  </tr>
+  <tr>
+    <td>GPU:         </td>
+    <td>$<%= @gpuprice.price %></td>
+    <td>$<%= @gpuavg %></td>
+  </tr>
+  <tr>
+    <td>RAM:         </td>
+    <td>$<%= @ramprice.price %></td>
+    <td>$<%= @ramavg %></td>
+  </tr>
+  <tr>
+    <td>HD:          </td>
+    <td>$<%= @hdprice.price %></td>
+    <td>$<%= @hdavg %></td>
+  </tr>
+  <tr>
+    <td>Power Supply:</td>
+    <td>$<%= @powerprice.price %></td>
+    <td>$<%= @poweravg %></td>
+  </tr>
+  <tr>
+    <th colspan="3">
+      <div class="panel-default">
+        <div class="panel-heading">
+          <% if @computer.by_price != 99999 && @computer.price > @computer.by_price  %>
+            <h6>Total Price: <font color="red"><strong>$<%= @computer.price %></strong></font></h6>
+          <% elsif @computer.by_price != 99999 && @computer.price < @computer.by_price %>
+            <h6>Total Price: <font color="green"><strong>$<%= @computer.price %></strong></font></h6>
+          <% else %>
+            <h6>Total Price: <strong>$<%= @computer.price %></strong></h6>
+          <% end %>
+        </div>
+      </div>
+    </th>
+  </tr>
+  <% if @by_price != 99999 %>
+    <tr>
+      <th colspan="3">
+        <div class="panel-default">
+          <div class="panel-heading">
+            <h6>Max Price: <strong>$<%= @by_price %></strong></h6>
+          </div>
+        </div>
+      </th>
+    </tr>
+  <% end %>
 </table>
+

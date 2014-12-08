@@ -18,12 +18,12 @@ class ComponentPagesController < ApplicationController
     @powerbl = Blacklist.find_by(user_id: current_user).power_id.split(',')
     @by_price = @computer.by_price
     @part_allowance = @by_price / 6
-    @moboavg = Motherboard.average(:price)
-    @cpuavg = Cpu.average(:price)
-    @gpuavg = Gpu.average(:price)
-    @ramavg = Ram.average(:price)
-    @hdavg = Hd.average(:price)
-    @poweravg = Power.average(:price)
+    @moboavg = '%.2f' % Motherboard.average(:price)
+    @cpuavg = '%.2f' % Cpu.average(:price)
+    @gpuavg = '%.2f' % Gpu.average(:price)
+    @ramavg = '%.2f' % Ram.average(:price)
+    @hdavg = '%.2f' % Hd.average(:price)
+    @poweravg = '%.2f' % Power.average(:price)
     @computer.save
   end
 
