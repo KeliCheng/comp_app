@@ -14,7 +14,7 @@
 class Computer < ActiveRecord::Base
 
 	attr_accessible :name, :status, :price, :user_id,
-	 :hd_id, :motherboard_id, :ram_id, :gpu_id, :cpu_id, :power_id
+	 :hd_id, :motherboard_id, :ram_id, :gpu_id, :cpu_id, :power_id, :by_price
 	belongs_to :user
 	#validates :name, presence: true, length: { maximum: 59 }, uniqueness: { case_sensitive: false }
 	#validates :status, presence: true

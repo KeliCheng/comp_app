@@ -1,0 +1,23 @@
+<% provide(:title, 'Build by Price') %>
+
+<center><h1>Build By Price?</h1></center>
+
+<center><p>When you build by price, you will get recommendations on what parts you should choose based on the <strong>max price</strong> you selected for the computer.</p></center>
+
+<div class="jumbotron">
+	<div align="center">
+		<h1> No? </h1>
+	</div>
+	<div align="center">
+		<%= link_to "Continue →", component_pages_motherboard_path, class: "btn btn-large btn-success" %>
+	</div>
+</div>
+
+<div class="jumbotron">
+	<div align="center">
+		<h1> Yes! </h1>
+	</div>
+	<div align="center">
+		<%= link_to "Continue →", build_by_select_price_path, class: "btn btn-large btn-info" %>
+	</div>
+</div>

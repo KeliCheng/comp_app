@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208034638) do
+ActiveRecord::Schema.define(version: 20141208055151) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20141208034638) do
     t.integer  "gpu_id"
     t.integer  "cpu_id"
     t.integer  "power_id"
+    t.integer  "by_price"
   end
 
   create_table "cpus", force: true do |t|

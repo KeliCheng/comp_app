@@ -29,6 +29,10 @@ CompApp::Application.routes.draw do
   get "component_pages/cpu"
   get "component_pages/ram"
   get "component_pages/motherboard"
+  get "build_by/price_option"
+  get "build_by/select_price"
+  post "build_by/select_price" => 'build_by#update'
+
 
 
   get "users/edit"

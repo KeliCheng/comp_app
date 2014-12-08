@@ -16,6 +16,14 @@ class ComponentPagesController < ApplicationController
     @gpubl = Blacklist.find_by(user_id: current_user).gpu_id.split(',')
     @hdbl = Blacklist.find_by(user_id: current_user).hd_id.split(',')
     @powerbl = Blacklist.find_by(user_id: current_user).power_id.split(',')
+    @by_price = @computer.by_price
+    @part_allowance = @by_price / 6
+    @moboavg = Motherboard.average(:price)
+    @cpuavg = Cpu.average(:price)
+    @gpuavg = Gpu.average(:price)
+    @ramavg = Ram.average(:price)
+    @hdavg = Hd.average(:price)
+    @poweravg = Power.average(:price)
     @computer.save
   end
 
@@ -65,8 +73,8 @@ class ComponentPagesController < ApplicationController
 
 
   def power   #do not display id = 1 
-    init_prices
     # @power = Power.all
+    init_prices
     @mobowatts = Motherboard.find_by(id: @computer.motherboard_id).watts
     @cpuwatts = Cpu.find_by(id: @computer.motherboard_id).watts
     @ramwatts = Ram.find_by(id: @computer.motherboard_id).watts
@@ -78,4 +86,5 @@ class ComponentPagesController < ApplicationController
     #@power = Power.where.not(id: @powerbl) #do not display blacklisted items
     @power = Power.where("watts >= ?", @powerwatts) & Power.where.not(id: @powerbl) #do not display either
   end
+
 end
