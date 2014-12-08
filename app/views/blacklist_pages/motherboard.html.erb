@@ -4,20 +4,11 @@
 <center><p>It holds many of crucial electronic components of the system.</p></center>
 <ul class="breadcrumb">
   <li><%= link_to "Home", static_pages_home_path%></li>
-  <li><%= link_to "Summary", computers_summary_path%></li>
-  <li class="active">Motherboard</li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li class="active">Motherboard Blacklist</li>
 </ul>
-
-<div>
-  <div class="alert alert-dismissable alert-info">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-    Motherboards are only compatable with <strong>certain types of parts</strong>. What motherboard you choose will determine what types of parts will be available for you to choose from when building the rest of your computer. <strong>Choose wisely!</strong>
-  </div>
-</div>
-
 <center>
   <table style="width:100%">
-    <%= render 'component_pages/price' %>
      <table class="table", style="width:80%;float:right;vertical-align:top">
       <tr class="active">
         <th></th>
@@ -33,11 +24,11 @@
       </tr>
 </center>
 
-  <%=form_for(@computer) do |mobo_form|%>
+  <%= form_for(@blacklist) do |mobobl_form| %>
 
-    <% @mother.each do |f| %>
+    <% @mobo.drop(1).each do |f| %>
     <tr>
-          <td><%=mobo_form.radio_button :motherboard_id, value = f.id%></td>
+          <td><%= mobobl_form.radio_button :mobo_id, value = @blacklist.mobo_id + f.id.to_s + ',' %></td>
           <td><%= f.id %></td>
           <% if f.creator != 0 %>
             <td><%= User.find_by(id: f.creator).name %></td>
@@ -55,12 +46,5 @@
       <% end %>
   </table>
 </table>
-  <%=mobo_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
+  <%= mobobl_form.submit "Blacklist", class: "btn btn-primary btn-lg btn-success" %>
   <%end%>
-
-  
-
-  <ul class="pager">
-    <li class="previous disabled"><%= link_to "← Previous"%></li>
-    <li class="next"><%= link_to "Next →", component_pages_cpu_path%></li>
-  </ul>

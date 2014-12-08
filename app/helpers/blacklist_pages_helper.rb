@@ -1,0 +1,2 @@
+module BlacklistPagesHelper
+end

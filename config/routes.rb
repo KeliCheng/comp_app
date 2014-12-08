@@ -1,11 +1,18 @@
 CompApp::Application.routes.draw do
+  get "blacklist_pages/blacklist"
+  get "blacklist_pages/motherboard"
+  get "blacklist_pages/cpu"
+  get "blacklist_pages/ram"
+  get "blacklist_pages/gpu"
+  get "blacklist_pages/hd"
+  get "blacklist_pages/power"
   post '/rate' => 'rater#create', :as => 'rate'
   get "computers/new"
   get "computers/current"
   get "computers/rename"
   get "computers/summary"
   get "computers/publish"
-
+  resources :blacklists
   resources :users
   resources :computers
   get "similar_computers/menu"

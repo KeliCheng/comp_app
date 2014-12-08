@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     if @user.save
         #sign_in @user
         flash[:success] = "Welcome to Build a Comp!"
+        Blacklist.create(user_id:@user.id, mobo_id:"1,", ram_id:"1,", gpu_id:"1,", cpu_id:"1,", hd_id:"1,", power_id:"1,").save
         redirect_to @user
       else
         render 'new'

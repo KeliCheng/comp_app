@@ -5,20 +5,11 @@
 <center><p> It performs the basic arithmetical, logical, control and input/output operations of the system.</p></center>
 <ul class="breadcrumb">
   <li><%= link_to "Home", static_pages_home_path%></li>
-  <li><%= link_to "Summary", computers_summary_path%></li>
-  <li class="active">CPU</li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li class="active">CPU Blacklist</li>
 </ul>
-
-<div>
-  <div class="alert alert-dismissable alert-info">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-    This computer's <a href="/component_pages/motherboard" class="alert-link">motherboard</a> is only compatible with <strong><%= @motherboard.cpu_compad%></strong> brand CPUs.
-  </div>
-</div>
-
-  <center>
-    <table style="width:100%">
-  <%= render 'component_pages/price' %>
+<center>
+  <table style="width:100%">
      <table class="table", style="width:80%;float:right;vertical-align:top">
       <tr class="active">
         <th></th>
@@ -31,11 +22,13 @@
         <th><center>Watts</center></th>
         <th><center>Price</center></th>
       </tr>
+</center>
 
-      <%=form_for(@computer) do |cpu_form|%>
-      <% @cpu.each do |f| %>
-        <tr>
-          <td><%=cpu_form.radio_button :cpu_id, value = f.id%></td>
+  <%= form_for(@blacklist) do |cpubl_form| %>
+
+    <% @cpu.drop(1).each do |f| %>
+    <tr>
+          <td><%= cpubl_form.radio_button :cpu_id, value = @blacklist.cpu_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>
           <% if f.creator != 0 %>
             <td><%= User.find_by(id: f.creator).name %></td>
@@ -49,18 +42,8 @@
           <td><%= f.watts %> Watts</td>
           <td>$<%= f.price %></td>
         </tr>
-        <%end%>
-      </table>
-    </table>
-            <%=cpu_form.submit "Save", class: "btn btn-primary btn-lg btn-success" %>
       <% end %>
-
-  </center>
-
-
-
-
-<ul class="pager">
-    <li class="previous"><%= link_to "← Previous", component_pages_motherboard_path%></li>
-    <li class="next"><%= link_to "Next →", component_pages_ram_path%></li>
-</ul>
+  </table>
+</table>
+  <%= cpubl_form.submit "Blacklist", class: "btn btn-primary btn-lg btn-success" %>
+  <%end%>

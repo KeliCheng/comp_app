@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205000834) do
+ActiveRecord::Schema.define(version: 20141208013820) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20141205000834) do
     t.float    "avg",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "blacklists", force: true do |t|
+    t.integer "user_id"
+    t.text    "mobo_id"
+    t.text    "cpu_id"
+    t.text    "ram_id"
+    t.text    "gpu_id"
+    t.text    "hd_id"
+    t.text    "power_id"
   end
 
   create_table "computers", force: true do |t|

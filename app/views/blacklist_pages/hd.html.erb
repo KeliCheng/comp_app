@@ -1,0 +1,46 @@
+<% provide(:title, 'HD') %>
+<center><h1>HD</h1></center>
+<center><p>-Hard Disk Drive-</p></center>
+<center><p>A data storage device used for storing and retrieving digital information using rapidly rotating disks coated with magnetic material.</p></center>
+<ul class="breadcrumb">
+  <li><%= link_to "Home", static_pages_home_path%></li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li class="active">HD Blacklist</li>
+</ul>
+<center>
+  <table style="width:100%">
+     <table class="table", style="width:80%;float:right;vertical-align:top">
+      <tr class="active">
+        <th></th>
+        <th><center>ID</center></th>
+        <th><center>Creator</center></th>
+        <th><center>Name</center></th>
+        <th><center>Type</center></th>
+        <th><center>Size</center></th>
+        <th><center>Watts</center></th>
+        <th><center>Price</center></th>
+      </tr>
+</center>
+
+  <%= form_for(@blacklist) do |hdbl_form| %>
+
+    <% @hd.drop(1).each do |f| %>
+    <tr>
+          <td><%= hdbl_form.radio_button :hd_id, value = @blacklist.hd_id + f.id.to_s + ','%></td>
+          <td><%= f.id %></td>
+          <% if f.creator != 0 %>
+            <td><%= User.find_by(id: f.creator).name %></td>
+          <% else %>
+            <td>System</td>
+          <% end %>
+          <td><%= f.name %></td>
+          <td><%= f.mb_compad %></td>
+          <td><%= f.size %></td>
+          <td><%= f.watts %> Watts</td>
+          <td>$<%= f.price %></td>
+        </tr>
+      <% end %>
+  </table>
+</table>
+  <%= hdbl_form.submit "Blacklist", class: "btn btn-primary btn-lg btn-success" %>
+  <%end%>
