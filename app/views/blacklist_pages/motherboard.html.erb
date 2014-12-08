@@ -26,7 +26,7 @@
 
   <%= form_for(@blacklist) do |mobobl_form| %>
 
-    <% @mobo.drop(1).each do |f| %>
+    <% @mobo.each do |f| %>
     <tr>
           <td><%= mobobl_form.radio_button :mobo_id, value = @blacklist.mobo_id + f.id.to_s + ',' %></td>
           <td><%= f.id %></td>

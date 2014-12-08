@@ -10,7 +10,7 @@ class BlacklistsController < ApplicationController
       		redirect_to :back
     	end
 	end
-
+  
 	private
 
   	def blacklist_params

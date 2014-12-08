@@ -24,7 +24,7 @@
 
   <%= form_for(@blacklist) do |hdbl_form| %>
 
-    <% @hd.drop(1).each do |f| %>
+    <% @hd.each do |f| %>
     <tr>
           <td><%= hdbl_form.radio_button :hd_id, value = @blacklist.hd_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>
