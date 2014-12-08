@@ -14,7 +14,8 @@
     <body>
     <p><center>Computer ID: <%= @computer.id %><br>
       Name: <%= @computer.name %><br>
-      Status: <%= @computer.status %></center></p>
+      Status: <%= @computer.status %>
+    </center></p>
 
        <table class="table">
         <tr class="active">
@@ -138,6 +139,16 @@
   <h4>Power Supply Error.</h4>
   <p>Power Supply cannot support.<a href="#" class="alert-link">Click to re-select.</a>.</p>
 </div>
+<% end %>
+
+<% if (@computer.by_price != 99999) %>
+  <div class="panel panel-default" align="center">
+    <div class="panel-body">
+    Desired Max Build Price: $<%= @computer.by_price %>
+    <a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+    <%= link_to "Change Max Price", build_by_select_price_path, class: "btn btn-large btn-info" %>
+    </div>
+  </div>
 <% end %>
 
 

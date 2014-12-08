@@ -25,6 +25,10 @@
         <th><center>Name</center></th>
         <th><center>Watts</center></th>
         <th><center>Price</center></th>
+        <% if @by_price != 99999 %>
+            <th><center>Recommended by Price</center></th>
+            <th><center>Fits Max Price</center></th>
+        <% end %>
       </tr>
 
 <%=form_for(@computer) do |power_form|%>
@@ -40,6 +44,18 @@
           <td><%= f.name %></td>
           <td><%= f.watts %> Watts</td>
           <td>$<%= f.price %></td>
+          <% if @by_price != 99999 %>
+            <% if  f.price <= @part_allowance %>
+              <td><span class="glyphicons glyphicons-thumbs-up" aria-hidden="true">O</span></td>
+            <% else %>
+              <td><span class="glyphicons glyphicons-thumbs-down" aria-hidden="true">X</span></td>
+            <% end %>
+            <% if  @computer.price - @powerprice.price + f.price <= @by_price %>
+              <td><span class="glyphicons glyphicons-ok" aria-hidden="true">O</span></td>
+            <% else %>
+              <td><span class="glyphicons glyphicons-remove" aria-hidden="true">X</span></td>
+            <% end %>
+          <% end %>
         </tr>
       <% end %>
     </table>

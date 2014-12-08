@@ -38,11 +38,11 @@ class ComputersController < ApplicationController
 
   def new
     if logged_in?
-  	 @computer = Computer.new(user_id:current_user.id, price:0, hd_id:1, motherboard_id:1, ram_id:1,gpu_id:1,power_id:1,cpu_id:1, name:"default")
+  	 @computer = Computer.new(user_id:current_user.id, price:0, hd_id:1, motherboard_id:1, ram_id:1,gpu_id:1,power_id:1,cpu_id:1, name:"default", by_price:99999)
      @computer.save
      current_user.current_comp = @computer.id
      current_user.save(validate: false)
-     redirect_to component_pages_motherboard_path
+     redirect_to build_by_price_option_path
     else
       redirect_to root_url
       flash[:danger] = 'Must be logged in to do that'
@@ -197,6 +197,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-  	params.require(:computer).permit(:name, :status, :price, :hd_id, :motherboard_id, :ram_id, :gpu_id, :cpu_id, :power_id )
+  	params.require(:computer).permit(:name, :status, :price, :hd_id, :motherboard_id, :ram_id, :gpu_id, :cpu_id, :power_id, :by_price )
   end
 end
