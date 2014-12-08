@@ -2,6 +2,7 @@
 <center><h1>All users</h1>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:25%">
     <% @users.each do |user| %>
+    <% if user.id != current_user.id %>
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
@@ -95,6 +96,7 @@
         </div>
       </div>
     </div>
+    <% end %>
     <% end %>
     <center>
       <br><br>
