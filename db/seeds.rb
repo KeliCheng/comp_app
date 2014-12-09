@@ -111,6 +111,11 @@ User.create(name:"John Doe", email: "JohnDoe@gmail.com", password: "jd", passwor
 User.create(name:"Mary Sue", email: "MarySue@gmail.com", password: "ms", password_confirmation: "ms", notifications: 1)
 User.create(name:"Tyler Brown", email: "TylerBrown@gmail.com", password: "tb", password_confirmation: "tb", notifications: 1)
 
+#Create blacklists for dummies
+Blacklist.create(user_id:"1", mobo_id:"", cpu_id:"1,", ram_id:"1,", gpu_id:"1,", hd_id:"1,", power_id:"1,")
+Blacklist.create(user_id:"2", mobo_id:"", cpu_id:"1,", ram_id:"1,", gpu_id:"1,", hd_id:"1,", power_id:"1,")
+Blacklist.create(user_id:"3", mobo_id:"", cpu_id:"1,", ram_id:"1,", gpu_id:"1,", hd_id:"1,", power_id:"1,")
+
 #User.create(name: "Test User", email: "testuser@test.com", password: "notapassword", password_confirmation: "notapassword")
 Computer.create(user_id: 1, name: "DefaultComp1", price: 1037,motherboard_id: 6, cpu_id: 8, gpu_id: 5, ram_id: 16, hd_id: 9, power_id: 7)
 Computer.create(user_id: 1, name: "DefaultComp2", price: 1070,motherboard_id: 3, cpu_id: 7, gpu_id: 14, ram_id: 6, hd_id: 9, power_id: 4)
