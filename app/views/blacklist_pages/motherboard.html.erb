@@ -4,7 +4,7 @@
 <center><p>It holds many of crucial electronic components of the system.</p></center>
 <ul class="breadcrumb">
   <li><%= link_to "Home", static_pages_home_path%></li>
-  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path%></li>
   <li class="active">Motherboard Blacklist</li>
 </ul>
 <center>
@@ -26,7 +26,7 @@
 
   <%= form_for(@blacklist) do |mobobl_form| %>
 
-    <% @mobo.each do |f| %>
+    <% @mobo.drop(1).each do |f| %>
     <tr>
           <td><%= mobobl_form.radio_button :mobo_id, value = @blacklist.mobo_id + f.id.to_s + ',' %></td>
           <td><%= f.id %></td>

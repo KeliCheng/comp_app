@@ -5,7 +5,7 @@
 <center><p> It allows data items to be read and written in roughly the same amount of time regardless of the order in which data items are accessed.</p></center>
 <ul class="breadcrumb">
   <li><%= link_to "Home", static_pages_home_path%></li>
-  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path%></li>
   <li class="active">RAM Blacklist</li>
 </ul>
 <center>
@@ -25,7 +25,7 @@
 
   <%= form_for(@blacklist) do |rambl_form| %>
 
-    <% @ram.each do |f| %>
+    <% @ram.drop(1).each do |f| %>
     <tr>
           <td><%= rambl_form.radio_button :ram_id, value = @blacklist.ram_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>

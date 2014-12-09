@@ -27,6 +27,13 @@ class ComponentPagesController < ApplicationController
     @computer.save
   end
 
+  def motherboard_selected(page_name)
+    if @computer.motherboard_id ==1
+        flash[:danger] = 'You need a motherboard selected before accessing the ' + page_name
+        redirect_to component_pages_motherboard_path
+    end
+  end
+
   def motherboard
     init_prices
     #@mother = Motherboard.all   #do not display id = 1
@@ -38,6 +45,7 @@ class ComponentPagesController < ApplicationController
   def cpu
     init_prices
     #@cpu = Cpu.all
+    motherboard_selected("CPU page")
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     #@cpu = Cpu.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).cpu_compad) #do not display id = 1 
     #@cpu = Cpu.where.not(id: @cpubl) #do not display blacklisted items
@@ -47,6 +55,7 @@ class ComponentPagesController < ApplicationController
   def ram
     init_prices
     #@ram = Ram.all
+    motherboard_selected("RA page")
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     #@ram = Ram.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).ram_compad)  #do not display id = 1 
     #@ram = Ram.where.not(id: @rambl) #do not display blacklisted items
@@ -56,6 +65,7 @@ class ComponentPagesController < ApplicationController
   def gpu
     init_prices
     #@gpu = Gpu.all
+    motherboard_selected("GPU page")
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     #@gpu = Gpu.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).gpu_compad)  #do not display id = 1 
     #@gpu = Gpu.where.not(id: @gpubl) #do not display blacklisted items
@@ -65,6 +75,7 @@ class ComponentPagesController < ApplicationController
   def hd
     init_prices
     #@hd = Hd.all
+    motherboard_selected("Hard drive page")
     @motherboard = Motherboard.find_by(id: @computer.motherboard_id)
     #@hd = Hd.where(mb_compad: Motherboard.find_by(id: @computer.motherboard_id).hd_compad)  #do not display id = 1 
     #@hd = Hd.where.not(id: @hdbl) #do not display blacklisted items
@@ -76,10 +87,10 @@ class ComponentPagesController < ApplicationController
     # @power = Power.all
     init_prices
     @mobowatts = Motherboard.find_by(id: @computer.motherboard_id).watts
-    @cpuwatts = Cpu.find_by(id: @computer.motherboard_id).watts
-    @ramwatts = Ram.find_by(id: @computer.motherboard_id).watts
-    @gpuwatts = Gpu.find_by(id: @computer.motherboard_id).watts
-    @hdwatts = Hd.find_by(id: @computer.motherboard_id).watts
+    @cpuwatts = Cpu.find_by(id: @computer.cpu_id).watts
+    @ramwatts = Ram.find_by(id: @computer.ram_id).watts
+    @gpuwatts = Gpu.find_by(id: @computer.gpu_id).watts
+    @hdwatts = Hd.find_by(id: @computer.hd_id).watts
     @powerwatts = (@mobowatts+@cpuwatts+@ramwatts+@gpuwatts+@hdwatts)*1.1 
     #power supply cannot be used for more than 90%
     #@power = Power.where("watts >= ?", @powerwatts)

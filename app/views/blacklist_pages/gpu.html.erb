@@ -4,7 +4,7 @@
 <center><p>A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display. </p></center>
 <ul class="breadcrumb">
   <li><%= link_to "Home", static_pages_home_path%></li>
-  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path%></li>
   <li class="active">GPU Blacklist</li>
 </ul>
 <center>
@@ -24,7 +24,7 @@
 
   <%= form_for(@blacklist) do |gpubl_form| %>
 
-    <% @gpu.each do |f| %>
+    <% @gpu.drop(1).each do |f| %>
     <tr>
           <td><%= gpubl_form.radio_button :gpu_id, value = @blacklist.gpu_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>

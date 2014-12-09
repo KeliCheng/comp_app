@@ -3,7 +3,7 @@
 <center><p>The electronic device that supplies electric energy to an electrical load. </p></center>
 <ul class="breadcrumb">
   <li><%= link_to "Home", static_pages_home_path%></li>
-  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path(current_user)%></li>
+  <li><%= link_to "Blacklist", blacklist_pages_blacklist_path%></li>
   <li class="active">Power Supply Blacklist</li>
 </ul>
 <center>
@@ -21,7 +21,7 @@
 
   <%= form_for(@blacklist) do |powerbl_form| %>
 
-    <% @power.each do |f| %>
+    <% @power.drop(1).each do |f| %>
     <tr>
           <td><%= powerbl_form.radio_button :power_id, value = @blacklist.power_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>

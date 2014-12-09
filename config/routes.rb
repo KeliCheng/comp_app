@@ -18,9 +18,8 @@ CompApp::Application.routes.draw do
   get "computers/rename"
   get "computers/summary"
   get "computers/publish"
-  resources :blacklists
-  resources :users
-  resources :computers
+  get "computers/delete"
+
   get "similar_computers/menu"
   get "similar_computers/similar_price"
   get "similar_computers/similar_components"
@@ -67,7 +66,9 @@ CompApp::Application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-
+  resources :blacklists
+  resources :users
+  resources :computersx
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

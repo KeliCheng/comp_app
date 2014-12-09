@@ -6,22 +6,22 @@
   <li class="active">Blacklist</li>
 </ul>
 <center>
-	<%= link_to blacklist_pages_motherboard_path(current_user), class: "btn btn-lg btn-primary" do %>
+	<%= link_to blacklist_pages_motherboard_path, class: "btn btn-lg btn-primary" do %>
 		<span class="glyphicon glyphicon-thumbs-down"></span> Motherboard
 	<% end %>
-	<%= link_to blacklist_pages_cpu_path(current_user), class: "btn btn-lg btn-primary" do %>
+	<%= link_to blacklist_pages_cpu_path, class: "btn btn-lg btn-primary" do %>
 		<span class="glyphicon glyphicon-thumbs-down"></span> CPU
 	<% end %>
-	<%= link_to blacklist_pages_ram_path(current_user), class: "btn btn-lg btn-primary" do %>
+	<%= link_to blacklist_pages_ram_path, class: "btn btn-lg btn-primary" do %>
 		<span class="glyphicon glyphicon-thumbs-down"></span> RAM
 	<% end %>
-	<%= link_to blacklist_pages_gpu_path(current_user), class: "btn btn-lg btn-primary" do %>
+	<%= link_to blacklist_pages_gpu_path, class: "btn btn-lg btn-primary" do %>
 		<span class="glyphicon glyphicon-thumbs-down"></span> GPU
 	<% end %>
-	<%= link_to blacklist_pages_hd_path(current_user), class: "btn btn-lg btn-primary" do %>
+	<%= link_to blacklist_pages_hd_path, class: "btn btn-lg btn-primary" do %>
 		<span class="glyphicon glyphicon-thumbs-down"></span> Hard Drive
 	<% end %>
-	<%= link_to blacklist_pages_power_path(current_user), class: "btn btn-lg btn-primary" do %>
+	<%= link_to blacklist_pages_power_path, class: "btn btn-lg btn-primary" do %>
 		<span class="glyphicon glyphicon-thumbs-down"></span> Power Supply
 	<% end %>
 </center>
@@ -41,7 +41,7 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <% @mobo.drop(1).each do |f| %>
+          <% @mobo.each do |f| %>
             <tr>
               <td><%= f.name %></td>
               <td><%= f.cpu_compad %></td>
