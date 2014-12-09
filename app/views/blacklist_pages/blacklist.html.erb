@@ -41,7 +41,7 @@
             <th><center>Watts</center></th>
             <th><center>Price</center></th>
           </tr>
-          <% @mobo.drop(1).each do |f| %>
+          <% @mobo.each do |f| %>
             <tr>
               <td><%= f.name %></td>
               <td><%= f.cpu_compad %></td>
