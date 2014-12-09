@@ -24,7 +24,7 @@
 
   <%= form_for(@blacklist) do |gpubl_form| %>
 
-    <% @gpu.each do |f| %>
+    <% @gpu.drop(1).each do |f| %>
     <tr>
           <td><%= gpubl_form.radio_button :gpu_id, value = @blacklist.gpu_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>

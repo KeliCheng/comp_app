@@ -41,8 +41,19 @@
 </center>
 
   <%=form_for(@computer) do |mobo_form|%>
-
-    <% @mother.each do |f| %>
+    <tr>
+        <td><%=mobo_form.radio_button :motherboard_id, value = 1%></td>
+        <td>1</td>
+        <td>System</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>$0</td>
+    </tr>
+    <% @mother.drop(1).each do |f| %>
     <tr>
           <td><%=mobo_form.radio_button :motherboard_id, value = f.id%></td>
           <td><%= f.id %></td>

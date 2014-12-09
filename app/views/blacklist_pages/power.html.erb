@@ -21,7 +21,7 @@
 
   <%= form_for(@blacklist) do |powerbl_form| %>
 
-    <% @power.each do |f| %>
+    <% @power.drop(1).each do |f| %>
     <tr>
           <td><%= powerbl_form.radio_button :power_id, value = @blacklist.power_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>

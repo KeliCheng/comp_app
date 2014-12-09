@@ -25,7 +25,7 @@
 
   <%= form_for(@blacklist) do |rambl_form| %>
 
-    <% @ram.each do |f| %>
+    <% @ram.drop(1).each do |f| %>
     <tr>
           <td><%= rambl_form.radio_button :ram_id, value = @blacklist.ram_id + f.id.to_s + ','%></td>
           <td><%= f.id %></td>
