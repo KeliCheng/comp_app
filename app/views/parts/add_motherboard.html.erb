@@ -1,6 +1,11 @@
 <% provide(:title, 'Add A Motherboard') %>
 
 <center><h1>Add A Motherboard</h1></center>
+<br>
+<center><%= image_tag("motherboard.png") %></center>
+<br>
+<center><p>The main printed circuit board found in computers.</p></center>
+<center><p>It holds many of crucial electronic components of the system.</p></center>
 
 <div class="row center jumbotron" >
   <div class="col-md-4 col-md-offset-4">
@@ -39,12 +44,10 @@
 		<br/>
 		<br/>
 		<center>
-			<div class="col-md-6 col-md-offset-1">
 				<%= f.submit "Create Motherboard", class: "btn btn-lg btn-success" %>
 				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
 				<% end %>
-			</div>
 		</center>
     <% end %>
   </div>

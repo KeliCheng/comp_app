@@ -1,6 +1,8 @@
 <% provide(:title, 'Add A Power Supply') %>
 
 <center><h1>Add A Power Supply</h1></center>
+<center><%= image_tag("power.png") %></center>
+<center><p>The electronic device that supplies electric energy to an electrical load. </p></center>
 
 <div class="row center jumbotron" >
   <div class="col-md-4 col-md-offset-4">
@@ -18,14 +20,12 @@
 
 		<br/>
 		<br/>
-			<div class="col-md-6 col-md-offset-1">
 			<center>
 				<%= f.submit "Create Power Supply", class: "btn btn-lg btn-success" %>
 				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
 				<% end %>
 			</center>
-			</div>
 		</center>
     <% end %>
   </div>

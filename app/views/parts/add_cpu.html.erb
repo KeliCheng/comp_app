@@ -1,6 +1,10 @@
 <% provide(:title, 'Add A CPU') %>
 
 <center><h1>Add A CPU</h1></center>
+<center><%= image_tag("cpu.png") %></center>
+<center><p>-Central Processing Unit-</p></center>
+<center><p>The hardware within a computer that carries out the instructions of a computer program.</p></center>
+<center><p> It performs the basic arithmetical, logical, control and input/output operations of the system.</p></center>
 
 <div class="row center jumbotron" >
   <div class="col-md-4 col-md-offset-4">
@@ -29,12 +33,10 @@
 		<br/>
 		<br/>
 		<center>
-			<div class="col-md-6 col-md-offset-1">
 				<%= f.submit "Create CPU", class: "btn btn-lg btn-success" %>
 				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
 				<% end %>
-			</div>
 		</center>
     <% end %>
   </div>

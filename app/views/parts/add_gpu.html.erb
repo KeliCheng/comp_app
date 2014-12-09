@@ -1,6 +1,11 @@
 <% provide(:title, 'Add A GPU') %>
 
 <center><h1>Add A GPU</h1></center>
+<br>
+<center><%= image_tag("gpu.png") %></center>
+<br>
+<center><p>-Graphics Processing Unit-</p></center>
+<center><p>A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display. </p></center>
 
 <div class="row center jumbotron" >
   <div class="col-md-4 col-md-offset-4">
@@ -27,12 +32,10 @@
 		<br/>
 		<br/>
 		<center>
-			<div class="col-md-6 col-md-offset-1">
 				<%= f.submit "Create GPU", class: "btn btn-lg btn-success" %>
 				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
 				<% end %>
-			</div>
 		</center>
     <% end %>
   </div>

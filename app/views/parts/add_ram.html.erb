@@ -1,6 +1,10 @@
 <% provide(:title, 'Add A RAM') %>
 
 <center><h1>Add RAM</h1></center>
+<center><%= image_tag("ram.png") %></center>
+<center><p>-Random-Access Memory-</p></center>
+<center><p> A form of computer data storage. </p></center>
+<center><p> It allows data items to be read and written in roughly the same amount of time regardless of the order in which data items are accessed.</p></center>
 
 <div class="row center jumbotron" >
   <div class="col-md-4 col-md-offset-4">
@@ -27,12 +31,10 @@
 		<br/>
 		<br/>
 		<center>
-			<div class="col-md-6 col-md-offset-1">
 				<%= f.submit "Create RAM", class: "btn btn-lg btn-success" %>
 				<a>&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 				<%= link_to parts_add_path, class: "btn btn-lg btn-danger" do %> Cancel
 				<% end %>
-			</div>
 		</center>
     <% end %>
   </div>
