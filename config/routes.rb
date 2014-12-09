@@ -68,7 +68,7 @@ CompApp::Application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   resources :blacklists
   resources :users
-  resources :computersx
+  resources :computers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
