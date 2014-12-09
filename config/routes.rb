@@ -18,6 +18,7 @@ CompApp::Application.routes.draw do
   get "computers/rename"
   get "computers/summary"
   get "computers/publish"
+  get "computers/delete"
   resources :blacklists
   resources :users
   resources :computers

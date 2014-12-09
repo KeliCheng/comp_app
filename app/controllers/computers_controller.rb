@@ -5,6 +5,27 @@ class ComputersController < ApplicationController
     @computer = Computer.find_by(id: current_user.current_comp)
   end
 
+  def delete
+    if logged_in?
+      @computer = Computer.find_by_id(params[:id])
+      if @computer.user_id == current_user.id
+        if (@computer.id == current_user.current_comp)
+          redirect_to root_url
+          flash[:danger] = 'Cannot delete your current computer'
+        end
+        @computer.destroy
+        redirect_to root_url
+        flash[:success] = "Deleted your computer"
+      else
+        redirect_to root_url
+        flash[:danger] = 'Can only delete your own computers'
+      end
+    else
+      redirect_to root_url
+      flash[:danger] = 'Must be logged in to do that'
+    end
+  end
+
   def summary
     @computer = Computer.find_by(id: current_user.current_comp)
     # if motherboard_id == nil

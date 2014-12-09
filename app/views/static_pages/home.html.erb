@@ -38,6 +38,7 @@
         <th><center>ID</center></th>
         <th><center>Name</center></th>
         <th><center>Price</center></th>
+        <th><center>Delete</center></th>
       </tr>
       <% @computers.each do |f| %>
         <tr>
@@ -49,6 +50,11 @@
           <td><%= f.id %></td>
           <td><%= f.name %></td>
           <td>$<%= f.price %></td>
+          <td>
+            <%if current_user.current_comp != f.id%>
+              <%= link_to "Delete", computers_delete_path(id:f.id), data: {confirm: "Really delete this computer?"}%>
+            <%end%>
+          </td>
         </tr>
        <%end%>
         <tr>
