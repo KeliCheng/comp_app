@@ -87,10 +87,10 @@ class ComponentPagesController < ApplicationController
     # @power = Power.all
     init_prices
     @mobowatts = Motherboard.find_by(id: @computer.motherboard_id).watts
-    @cpuwatts = Cpu.find_by(id: @computer.motherboard_id).watts
-    @ramwatts = Ram.find_by(id: @computer.motherboard_id).watts
-    @gpuwatts = Gpu.find_by(id: @computer.motherboard_id).watts
-    @hdwatts = Hd.find_by(id: @computer.motherboard_id).watts
+    @cpuwatts = Cpu.find_by(id: @computer.cpu_id).watts
+    @ramwatts = Ram.find_by(id: @computer.ram_id).watts
+    @gpuwatts = Gpu.find_by(id: @computer.gpu_id).watts
+    @hdwatts = Hd.find_by(id: @computer.hd_id).watts
     @powerwatts = (@mobowatts+@cpuwatts+@ramwatts+@gpuwatts+@hdwatts)*1.1 
     #power supply cannot be used for more than 90%
     #@power = Power.where("watts >= ?", @powerwatts)

@@ -37,6 +37,7 @@ class ComputersController < ApplicationController
     @hd = Hd.find_by(id: @computer.hd_id)
     @power = Power.find_by(id: @computer.power_id)
     @sum_watts = (@motherboard.watts + @cpu.watts + @ram.watts + @gpu.watts + @hd.watts)*1.1
+    @price_sum = (@motherboard.price + @cpu.price + @ram.price + @gpu.price + @hd.price)
   end
 
   def current
