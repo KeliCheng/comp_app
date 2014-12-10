@@ -25,7 +25,11 @@ class PartsController < ApplicationController
   end
 
   def create_motherboard
-    @motherboard = Motherboard.create(motherboard_params)
+    if @motherboard = Motherboard.create(motherboard_params)
+      else
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
+    end
     @motherboard.creator ||= current_user.id
     if @motherboard.save
       flash[:success] = "Your motherboard has been created!"
@@ -64,7 +68,11 @@ class PartsController < ApplicationController
   end
 
   def create_gpu
-    @gpu = Gpu.create(gpu_params)
+    if @gpu = Gpu.create(gpu_params)
+      else
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
+    end
     @gpu.creator ||= current_user.id
     if @gpu.save
       flash[:success] = "Your GPU has been created!"
@@ -81,7 +89,11 @@ class PartsController < ApplicationController
   end
 
   def create_ram
-    @ram = Ram.create(ram_params)
+    if @ram = Ram.create(ram_params)
+      else
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
+    end
     @ram.creator ||= current_user.id
     if @ram.save
       flash[:success] = "Your RAM has been created!"
@@ -98,7 +110,11 @@ class PartsController < ApplicationController
   end
 
   def create_hd
-    @hd = Hd.create(hd_params)
+    if @hd = Hd.create(hd_params)
+      else
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
+    end
     @hd.creator ||= current_user.id
     if @hd.save
       flash[:success] = "Your HD has been created!"
@@ -115,7 +131,11 @@ class PartsController < ApplicationController
   end
 
   def create_power
-    @power = Power.create(power_params)
+    if @power = Power.create(power_params)
+      else
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
+    end
     @power.creator ||= current_user.id
     if @power.save
       flash[:success] = "Your power supply has been created!"
