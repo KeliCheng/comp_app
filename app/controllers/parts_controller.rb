@@ -37,12 +37,17 @@ class PartsController < ApplicationController
       @notif.save
       redirect_to parts_add_path
     else
-      render 'new'
+      flash[:danger] = "You must have the input of the correct type in all fields to create a part."
+      redirect_to :back
     end
   end
 
   def create_cpu
-    @cpu = Cpu.create(cpu_params)
+    if @cpu = Cpu.create(cpu_params)
+    else
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
+    end
     @cpu.creator ||= current_user.id
     if @cpu.save
       flash[:success] = "Your CPU has been created!"
@@ -53,7 +58,8 @@ class PartsController < ApplicationController
       @notif.save
       redirect_to parts_add_path
     else
-      render 'new'
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
     end
   end
 
@@ -69,7 +75,8 @@ class PartsController < ApplicationController
       @notif.save
       redirect_to parts_add_path
     else
-      render 'new'
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
     end
   end
 
@@ -85,7 +92,8 @@ class PartsController < ApplicationController
       @notif.save
       redirect_to parts_add_path
     else
-      render 'new'
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
     end
   end
 
@@ -101,7 +109,8 @@ class PartsController < ApplicationController
       @notif.save
       redirect_to parts_add_path
     else
-      render 'new'
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
     end
   end
 
@@ -116,7 +125,8 @@ class PartsController < ApplicationController
       @notif.save
       redirect_to parts_add_path
     else
-      render 'new'
+      flash[:danger] = "You must have input of the correct type in all fields to create a part."
+      redirect_to :back
     end
   end
 
