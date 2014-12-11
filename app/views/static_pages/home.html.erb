@@ -61,10 +61,17 @@
         	<td><%=link_to computers_new_path, class: "btn btn-lg btn-success" do %>
         		<strong>Create new Comp!</strong>
         		<%end%>
-        		</td>
-        	<td><%=link_to computers_rename_path, class: "btn btn-lg btn-primary" do %>
-        		Rename Current Computer
-        		<%end%>
+        	</td>
+        	<td>
+            <% if @current_comp.nil? %>
+              <%=link_to computers_rename_path, class: "btn btn-lg btn-primary disabled" do %>
+              Rename Current Computer
+              <%end%>
+            <% else %>
+              <%=link_to computers_rename_path, class: "btn btn-lg btn-primary" do %>
+              Rename Current Computer
+              <%end%>
+            <% end %>
         	</td>
         	<td>
             <% if @current_comp.nil? %>
@@ -78,9 +85,15 @@
             <% end %>
             </td>
             <td>
-        		<%=link_to computers_summary_path, class: "btn btn-lg btn-primary" do %>
-        		View Current Computer
-        		<%end%>
+              <% if @current_comp.nil? %>
+              <%=link_to computers_summary_path, class: "btn btn-lg btn-primary disabled" do %>
+              View Current Computer
+              <%end%>
+            <% else %>
+              <%=link_to computers_summary_path, class: "btn btn-lg btn-primary" do %>
+              View Current Computer
+              <%end%>
+              <%end%>
             </td>
         </tr>
       </table>
