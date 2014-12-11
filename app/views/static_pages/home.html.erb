@@ -67,9 +67,15 @@
         		<%end%>
         	</td>
         	<td>
-        		<%=link_to similar_computers_menu_path, class: "btn btn-lg btn-primary" do %>
-        		View Similar Computers
-        		<%end%>
+            <% if @current_comp.nil? %>
+              <%=link_to similar_computers_menu_path, class: "btn btn-lg btn-primary disabled" do %>
+              View Similar Computers
+              <%end%>
+            <% else %>
+              <%=link_to similar_computers_menu_path, class: "btn btn-lg btn-primary" do %>
+              View Similar Computers
+              <%end%>
+            <% end %>
             </td>
             <td>
         		<%=link_to computers_summary_path, class: "btn btn-lg btn-primary" do %>
@@ -102,7 +108,7 @@
               <td><%= f.ram_compad %></td>
               <td><%= f.hd_compad %></td>
               <td><%= f.watts %></td>
-              <td><%= f.price %></td>
+              <td>$<%= f.price %></td>
             </tr>
           <% end %>
         </table>
@@ -123,9 +129,9 @@
               <td><%= f.name %></td>
               <td><%= f.mb_compad %></td>
               <td><%= f.cores %></td>
-              <td><%= f.speed %></td>
+              <td><%= f.speed %> GHz</td>
               <td><%= f.watts %></td>
-              <td><%= f.price %></td>
+              <td>$<%= f.price %></td>
             </tr>
           <% end %>
         </table>
@@ -144,9 +150,9 @@
             <tr>
               <td><%= f.name %></td>
               <td><%= f.mb_compad %></td>
-              <td><%= f.vram %></td>
+              <td><%= f.vram %> GB</td>
               <td><%= f.watts %></td>
-              <td><%= f.price %></td>
+              <td>$<%= f.price %></td>
             </tr>
           <% end %>
         </table>
@@ -164,9 +170,9 @@
             <tr>
               <td><%= f.name %></td>
               <td><%= f.mb_compad %></td>
-              <td><%= f.size %></td>
+              <td><%= f.size %> GB</td>
               <td><%= f.watts %></td>
-              <td><%= f.price %></td>
+              <td>$<%= f.price %></td>
             </tr>
           <% end %>
         </table>
@@ -184,9 +190,9 @@
             <tr>
               <td><%= f.name %></td>
               <td><%= f.mb_compad %></td>
-              <td><%= f.size %></td>
+              <td><%= f.size %> GB</td>
               <td><%= f.watts %></td>
-              <td><%= f.price %></td>
+              <td>$<%= f.price %></td>
             </tr>
           <% end %>
         </table>

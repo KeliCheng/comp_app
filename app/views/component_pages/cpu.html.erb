@@ -55,14 +55,14 @@
           <td>$<%= f.price %></td>
           <% if @by_price != 99999 %>
             <% if  f.price <= @part_allowance %>
-              <td><span class="glyphicons glyphicons-thumbs-up" aria-hidden="true">O</span></td>
+              <td><font color="green"><strong>O</strong></font></td>
             <% else %>
-              <td><span class="glyphicons glyphicons-thumbs-down" aria-hidden="true">X</span></td>
+              <td><font color="red"><strong>X</strong></font></td>
             <% end %>
-            <% if  @computer.price - @cpuprice.price + f.price <= @by_price %>
-              <td><span class="glyphicons glyphicons-ok" aria-hidden="true">O</span></td>
+            <% if  @computer.price - @moboprice.price + f.price <= @by_price %>
+              <td><font color="green"><strong>O</strong></font></td>
             <% else %>
-              <td><span class="glyphicons glyphicons-remove" aria-hidden="true">X</span></td>
+              <td><font color="red"><strong>X</strong></font></td>
             <% end %>
           <% end %>
         </tr>

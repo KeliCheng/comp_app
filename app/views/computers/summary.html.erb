@@ -1,5 +1,5 @@
   <% provide(:title, 'Summary') %>
-  <center><h1>Summary</h1></center>
+  <center><h1><strong>Summary</strong></h1></center>
    <head>
           <script language="javascript">
               function turnRed() {
@@ -12,91 +12,148 @@
       </head>
   <center>
     <body>
-    <p><center>Computer ID: <%= @computer.id %><br>
+    <h2><center>Computer ID: <%= @computer.id %><br>
       Name: <%= @computer.name %><br>
-      Status: <%= @computer.status %>
-    </center></p>
-
+    </center></h2>
+    
+      <br>
+      <center><h3>Motherboard:  
+      <%= link_to "Edit", component_pages_motherboard_path, class: "btn btn-primary btn-s" %>
+      <%= link_to "Delete", computers_delete_mobo_path, data: {confirm: "Are you sure to delete?"}, class: "btn btn-primary btn-s disabled" %></h3></center>
        <table class="table">
         <tr class="active">
-          <th><center>Part</center></th>
-          <th><center>Description</center></th>
-          <th> </th>
+          <th><center>ID</center></th>
+          <th><center>Name</center></th>
+          <th><center>CPU Type</center></th>
+          <th><center>GPU Type</center></th>
+          <th><center>RAM Type</center></th>
+          <th><center>HD Type</center></th>
+          <th><center>Watts</center></th>
+          <th><center>Price</center></th>
         </tr>
+        <tr>
+          <td><center><%= @motherboard.id %></center></td>
+          <td><center><%= @motherboard.name %></center></td>
+          <td><center><%= @motherboard.cpu_compad %></center></td>
+          <td><center><%= @motherboard.gpu_compad %></center></td>
+          <td><center><%= @motherboard.ram_compad %></center></td>
+          <td><center><%= @motherboard.hd_compad %></center></td>
+          <td><center><%= @motherboard.watts %></center></td>
+          <td><center>$<%= @motherboard.price %></center></td>
+        </tr>
+      </table>
 
-          <div id="mobo" onload='turnRed()'>
-               <tr>
-            <td>Motherboard</td>
-            <td><p>ID: <%= @motherboard.id %><br>
-              <%= @motherboard.name %><br>
-              CPU Type: <%= @motherboard.cpu_compad %><br>
-              RAM Type: <%= @motherboard.ram_compad %><br>
-              GPU Type: <%= @motherboard.gpu_compad %><br>
-              HD  Type: <%= @motherboard.hd_compad %><br>
-              <%= @motherboard.watts %> Watts<br>
-              $<%= @motherboard.price %></p></td>
-               <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_motherboard_path%></td>
-               <td class="btn btn-primary btn-xs disabled"><%= link_to "Delete", computers_delete_mobo_path, data: {confirm: "Are you sure to delete?"}%></td>
-            </tr>
-          </div>
+      <br>
+      <center><h3>CPU:  
+      <%= link_to "Edit", component_pages_cpu_path, class: "btn btn-primary btn-s" %>
+      <%= link_to "Delete", computers_delete_cpu_path, data: {confirm: "Are you sure to delete?"}, class: "btn btn-primary btn-s" %></h3></center>
+       <table class="table">
+        <tr class="active">
+          <th><center>ID</center></th>
+          <th><center>Name</center></th>
+          <th><center>Type</center></th>
+          <th><center>Cores</center></th>
+          <th><center>Speed</center></th>
+          <th><center>Watts</center></th>
+          <th><center>Price</center></th>
+        </tr>
+        <tr>
+          <td><center><%= @cpu.id %></center></td>
+          <td><center><%= @cpu.name %></center></td>
+          <td><center><%= @cpu.mb_compad %></center></td>
+          <td><center><%= @cpu.cores %></center></td>
+          <td><center><%= @cpu.speed %> GHz</center></td>
+          <td><center><%= @cpu.watts %></center></td>
+          <td><center>$<%= @cpu.price %></center></td>
+        </tr>
+      </table>
 
+      <br>
+      <center><h3>GPU:  
+      <%= link_to "Edit", component_pages_gpu_path, class: "btn btn-primary btn-s" %>
+      <%= link_to "Delete", computers_delete_gpu_path, data: {confirm: "Are you sure to delete?"}, class: "btn btn-primary btn-s" %></h3></center>
+       <table class="table">
+        <tr class="active">
+          <th><center>ID</center></th>
+          <th><center>Name</center></th>
+          <th><center>Type</center></th>
+          <th><center>VRAM</center></th>
+          <th><center>Watts</center></th>
+          <th><center>Price</center></th>
+        </tr>
+        <tr>
+          <td><center><%= @gpu.id %></center></td>
+          <td><center><%= @gpu.name %></center></td>
+          <td><center><%= @gpu.mb_compad %></center></td>
+          <td><center><%= @gpu.vram %> GB</center></td>
+          <td><center><%= @gpu.watts %></center></td>
+          <td><center>$<%= @gpu.price %></center></td>
+        </tr>
+      </table>
 
-          <tr>
-            <td>CPU</td>
-            <td><p>ID: <%= @cpu.id %><br>
-              <%= @cpu.name %><br>
-              Type: <%= @cpu.mb_compad %><br>
-              SPEED: <%= @cpu.speed %> GHz<br>
-              <%= @cpu.watts %> Watts<br>
-              $<%= @cpu.price %></p></td>
-              <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_cpu_path%></td>
-               <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_cpu_path, data: {confirm: "Are you sure to delete?"}%></td>
+      <br>
+      <center><h3>RAM:  
+      <%= link_to "Edit", component_pages_ram_path, class: "btn btn-primary btn-s" %>
+      <%= link_to "Delete", computers_delete_ram_path, data: {confirm: "Are you sure to delete?"}, class: "btn btn-primary btn-s" %></h3></center>
+       <table class="table">
+        <tr class="active">
+          <th><center>ID</center></th>
+          <th><center>Name</center></th>
+          <th><center>Type</center></th>
+          <th><center>VRAM</center></th>
+          <th><center>Watts</center></th>
+          <th><center>Price</center></th>
+        </tr>
+        <tr>
+          <td><center><%= @gpu.id %></center></td>
+          <td><center><%= @gpu.name %></center></td>
+          <td><center><%= @gpu.mb_compad %></center></td>
+          <td><center><%= @gpu.vram %> GB</center></td>
+          <td><center><%= @gpu.watts %></center></td>
+          <td><center>$<%= @gpu.price %></center></td>
+        </tr>
+      </table>
 
-          </tr>
-          <tr>
-            <td>RAM</td>
-            <td><p>ID: <%= @ram.id %><br>
-              <%= @ram.name %><br>
-              Type: <%= @ram.mb_compad %><br>
-              SIZE: <%= @ram.size %> GB<br>
-              <%= @ram.watts %> Watts<br>
-              $<%= @ram.price %></p></td>
-              <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_ram_path%></td>
-               <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_ram_path, data: {confirm: "Are you sure to delete?"}%></td>
+      <br>
+      <center><h3>HD:  
+      <%= link_to "Edit", component_pages_hd_path, class: "btn btn-primary btn-s" %>
+      <%= link_to "Delete", computers_delete_hd_path, data: {confirm: "Are you sure to delete?"}, class: "btn btn-primary btn-s" %></h3></center>
+       <table class="table">
+        <tr class="active">
+          <th><center>ID</center></th>
+          <th><center>Name</center></th>
+          <th><center>Type</center></th>
+          <th><center>Size</center></th>
+          <th><center>Watts</center></th>
+          <th><center>Price</center></th>
+        </tr>
+        <tr>
+          <td><center><%= @hd.id %></center></td>
+          <td><center><%= @hd.name %></center></td>
+          <td><center><%= @hd.mb_compad %></center></td>
+          <td><center><%= @hd.size %> GB</center></td>
+          <td><center><%= @hd.watts %></center></td>
+          <td><center>$<%= @hd.price %></center></td>
+        </tr>
+      </table>
 
-          </tr>
-          <tr>
-            <td>GPU</td>
-            <td><p>ID: <%= @gpu.id %><br>
-              <%= @gpu.name %><br>
-              Type: <%= @gpu.mb_compad %><br>
-              VRAM: <%= @gpu.vram %> GB<br>
-              <%= @gpu.watts %> Watts<br>
-              $<%= @gpu.price %></p></td>
-              <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_gpu_path%></td>
-               <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_gpu_path, data: {confirm: "Are you sure to delete?"}%></td>
-
-          </tr>
-          <tr>
-            <td>HD</td>
-            <td><p>ID: <%= @hd.id %><br>
-              <%= @hd.name %><br>
-              Type: <%= @hd.mb_compad %><br>
-              SIZE: <%= @hd.size %> GB<br>
-              <%= @hd.watts %> Watts<br>
-              $<%= @hd.price %></p></td>
-              <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_hd_path%></td>
-               <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_hd_path, data: {confirm: "Are you sure to delete?"}%></td>
-          </tr>
-          <tr>
-            <td>Power Supply</td>
-            <td><p>ID: <%= @power.id %><br>
-              <%= @power.name %><br>
-              <%= @power.watts %> Watts<br>
-              $<%= @power.price %></p></td>
-              <td class="btn btn-primary btn-xs"><%= link_to "Edit/Select", component_pages_power_path%></td>
-               <td class="btn btn-primary btn-xs"><%= link_to "Delete", computers_delete_power_path, data: {confirm: "Are you sure to delete?"}%></td>
-          </tr>
+      <br>
+      <center><h3>Power Supply:  
+      <%= link_to "Edit", component_pages_power_path, class: "btn btn-primary btn-s" %>
+      <%= link_to "Delete", computers_delete_power_path, data: {confirm: "Are you sure to delete?"}, class: "btn btn-primary btn-s" %></h3></center>
+       <table class="table">
+        <tr class="active">
+          <th><center>ID</center></th>
+          <th><center>Name</center></th>
+          <th><center>Watts</center></th>
+          <th><center>Price</center></th>
+        </tr>
+        <tr>
+          <td><center><%= @power.id %></center></td>
+          <td><center><%= @power.name %></center></td>
+          <td><center><%= @power.watts %></center></td>
+          <td><center>$<%= @power.price %></center></td>
+        </tr>
       </table>
   </center>
 

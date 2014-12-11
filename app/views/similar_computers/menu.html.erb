@@ -3,10 +3,12 @@
 	<h1>Similar Computers</h1>
 	<p>Welcome to the similar computers menu! You can view computers that share similar components (parts like CPU, GPU, etc) to your own computers here or that have a similar price! If you have not made any computers yet, click <%= link_to "here", static_pages_home_path %> to return to your home page and get started.</p>
 
-	<%= link_to similar_computers_similar_components_path, class: "btn btn-lg btn-primary" do %>
+
+		<%= link_to similar_computers_similar_components_path, class: "btn btn-lg btn-primary" do %>
 				 By Similar Components
-			<% end %>
-	<%= link_to similar_computers_similar_price_path, class: "btn btn-lg btn-primary" do %>
+		<% end %>
+		<%= link_to similar_computers_similar_price_path, class: "btn btn-lg btn-primary" do %>
 				 By Similar Price
-			<% end %>
+		<% end %>
+		
 </center>
